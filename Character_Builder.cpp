@@ -1,4 +1,5 @@
 #include "character_builder.h"
+#include "inventory.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -28,6 +29,10 @@ void Player::CreateName() {
 
 string Player::getName() {
     return Name;
+}
+
+int Player::getHealth() {
+    return Health;
 }
 
 int Tests::speed() {
