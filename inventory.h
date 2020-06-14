@@ -5,11 +5,13 @@ using namespace std;
 
 class Inventory{
     private:
-        int Size = 10;
-        int Num_items = 0;
-        list<string> Items = {};
+        int size = 10;
+        int num_items = 0;
+        list<string> items[size] = {};
     public:
-        int getSize();
-        int getNum_items();
-        list<string> get_Items();
+        int get_size();
+        int get_num_items();
+        list<string> get_items();
+        int add_item(string item);
+        int remove_item(string item);
 };
