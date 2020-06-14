@@ -12,12 +12,3 @@ class Player{
         string getName();
         int getHealth();
 };
-
-class Tests{
-    public:        
-        int speed();
-        short luck(); 
-        int intel(); 
-};
-
-void sleep(); 

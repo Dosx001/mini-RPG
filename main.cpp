@@ -1,4 +1,6 @@
-#include "character_builder.h"
+#include "Player.h"
+#include "Trials.h"
+//#include "Inventory.h"
 #include <iostream>
 
 using namespace std;
@@ -7,8 +9,9 @@ int main() {
     Player Py;
     Py.CreateName();
     cout << "Hello " << Py.getName() << "!" << endl;
-    Tests Test;
-    Test.luck();
+    cout << Py.getHealth() << endl;
+    Trials Trial;
+    Trial.luck();
     //Test.speed();
     //Test.intel();
     return 0;

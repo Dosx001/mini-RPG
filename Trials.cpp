@@ -1,41 +1,10 @@
-#include "character_builder.h"
-#include "inventory.h"
+#include "Trials.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
 #include <list>
 
-using namespace std;
-
-void Player::CreateName() {
-    char CheckName = ' ';
-    string name;
-    while (CheckName != 'y') {
-        cout << "What is your name? ";
-        getline(cin, name);
-        if (not name.empty()) {
-            CheckName = ' ';
-            while (CheckName != 'n') {
-                cout << "Is your name " << name << "? (y/n) ";
-                cin >> CheckName;
-                if (CheckName == 'y') {
-                    break;
-                }
-            }
-        }
-    }
-    Name = name;
-}
-
-string Player::getName() {
-    return Name;
-}
-
-int Player::getHealth() {
-    return Health;
-}
-
-int Tests::speed() {
+int Trials::speed() {
     long t = time(0);
     cout << t << endl;
     char hit;
@@ -54,7 +23,7 @@ int Tests::speed() {
     return hits;
 }
 
-short Tests::luck() {
+short Trials::luck() {
     short num;
     short guess;
     cout << "Pick a number between 1 and 10: " << endl;
@@ -87,7 +56,7 @@ short Tests::luck() {
     }
 }
 
-int Tests::intel() {
+int Trials::intel() {
     list<const char*> ops = {"+","-","*","/"};
     list<int> nums = {1,2,3,4};
     cout << "" << endl;

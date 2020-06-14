@@ -1,19 +1,20 @@
-#include "inventory.h"
+#include "Inventory.h"
+#include <iostream>
 #include <string>
 #include <list>
 
 using namespace std;
 
 int Inventory::get_size() {
-    return Size;
+    return size;
 }
 
 int Inventory::get_num_items() {
-    return Num_items;
+    return num_items;
 }
 
 list<string> Inventory::get_items() {
-    return Items;
+    return items;
 }
 
 int add_item(string item) {
@@ -28,4 +29,5 @@ int add_item(string item) {
 }
 
 int remove_item(string item) {
-
+    return 0;
+}
