@@ -65,7 +65,7 @@ int Trials::intel() {
         int num1 = rand() % 10;
         int num2 = rand() % 10;
         char op = ops[rand() % 4];
-        cout << "Whats's " << num1 << " " << op << " " << num1 << "?" << endl;
+        cout << "Whats's " << num1 << " " << op << " " << num2 << "?" << endl;
         cin >> ans;
         cout << num1 + num2 << endl;
     }
