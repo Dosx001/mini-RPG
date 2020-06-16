@@ -1,17 +1,19 @@
-output: main.o Player.o Trials.o
-	g++ main.o Player.o Trials.o -o mini_RPG.exe
+CC = c++
+OBJS = main.o Player.o Trials.o Inventory.o
+FLAGS = -c -Wall
+EXE = mini_RPG.exe
 
-main.o: main.cpp
-	g++ -c -Wall main.cpp
+link: $(OBJS)
+	$(CC) $(OBJS) -o $(EXE)
 
-Player.o: Player.cpp Player.h
-	g++ -c -Wall Player.cpp
+%.o: %.cpp Player.h
+	$(CC) $(FLAGS) $*.cpp
 
-Trials.o: Trials.cpp Trials.h
-	g++ -c -Wall Trials.cpp
+%.o: %.cpp Trials.h
+	$(CC) $(FLAGS) $*.cpp
 
-Inventory.o: Inventory.cpp Inventory.h
-	g++ -c -Wall Inventory.cpp
+%.o: %.cpp Inventory.h
+	$(CC) $(FLAGS) $*.cpp
 
 clean:
-	rm *.o
+	rm *.o $(EXE)

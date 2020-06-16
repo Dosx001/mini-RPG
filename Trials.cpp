@@ -2,7 +2,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <list>
 
 int Trials::speed() {
     long t = time(0);
@@ -57,15 +56,25 @@ short Trials::luck() {
 }
 
 int Trials::intel() {
-    list<const char*> ops = {"+","-","*","/"};
-    list<int> nums = {1,2,3,4};
-    cout << "" << endl;
+    clock_t startClock = clock();
+    float secondsAhead = (short) 10 * CLOCKS_PER_SEC; 
+    char ops [4] = {'+','-','*','/'};
+    int ans;
+    srand(time(0));
+    while (clock() < startClock + secondsAhead) {
+        int num1 = rand() % 10;
+        int num2 = rand() % 10;
+        char op = ops[rand() % 4];
+        cout << "Whats's " << num1 << " " << op << " " << num1 << "?" << endl;
+        cin >> ans;
+        cout << num1 + num2 << endl;
+    }
     return 0;
 }
 
 void sleep() {
     clock_t startClock = clock();
     float secondsAhead = (short) 5 * CLOCKS_PER_SEC;
-    while(clock() < startClock+secondsAhead);
+    while(clock() < startClock + secondsAhead);
     return;
 }
