@@ -15,7 +15,7 @@ int Trials::speed() {
     }
     cout << "Stop!!!\a" << endl;
     cout << "Calculating..." << endl;
-    sleep();
+    sleep(5);
     cout << "Number of hits: \a" << hits << endl;
     cin >> hit;
     cout << hit << endl;
@@ -31,7 +31,7 @@ short Trials::luck() {
     num = rand() % 9 + 1;
     short guesses = 3;
     while (1 < guesses) { 
-        --guesses;
+        guesses--;
         if (guess == num) {
             cout << "The number is " << num << "!" <<endl;
             break;
@@ -56,25 +56,61 @@ short Trials::luck() {
 }
 
 int Trials::intel() {
-    clock_t startClock = clock();
-    float secondsAhead = (short) 10 * CLOCKS_PER_SEC; 
     char ops [4] = {'+','-','*','/'};
-    int ans;
+    float ans;
     srand(time(0));
-    while (clock() < startClock + secondsAhead) {
-        int num1 = rand() % 10;
-        int num2 = rand() % 10;
+    long t = time(0);
+    int correct = 0;
+    float check;
+    while (time(0) < t + (short) 15) {
+        float num1 = rand() % 10;
+        float num2 = rand() % 10;
         char op = ops[rand() % 4];
         cout << "Whats's " << num1 << " " << op << " " << num2 << "?" << endl;
         cin >> ans;
-        cout << num1 + num2 << endl;
+        switch(op) {
+            case '+':
+                check = num1 + num2;
+                if (ans == check) { 
+                    cout << "Correct!" << endl;
+                    correct++;
+                    break;
+                }
+                cout << "Wrong. The answer is " << check << endl;
+                break;
+            case '-':
+                check = num1 - num2;
+                if (ans == check) {
+                    cout << "Correct!" << endl;
+                    correct++;
+                    break;
+                }
+                cout << "Wrong. The answer is " << check << endl;
+                break;
+            case '*':
+                check = num1 * num2;
+                if (ans == check) {
+                    cout << "Correct!" << endl;
+                    correct++;
+                    break;
+                }
+                cout << "Wrong. The answer is " << check << endl;
+                break;
+            case '/':
+                check = num1 / num2;
+                if (ans == check) {
+                    cout << "Correct!" << endl;
+                    correct++;
+                    break;
+                }
+                cout << "Wrong. The answer is " << check << endl;
+        }
     }
-    return 0;
+    return correct;
 }
 
-void sleep() {
+void sleep(short time) {
     clock_t startClock = clock();
-    float secondsAhead = (short) 5 * CLOCKS_PER_SEC;
-    while(clock() < startClock + secondsAhead);
-    return;
+    float secondsAhead = time * CLOCKS_PER_SEC;
+    while (clock() < startClock + secondsAhead);
 }

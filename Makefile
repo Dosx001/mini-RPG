@@ -1,5 +1,5 @@
 CC = c++
-OBJS = main.o Player.o Trials.o Inventory.o
+OBJS = main.o Player.o Trials.o Inventory.o Menu.o
 FLAGS = -c -Wall
 EXE = mini_RPG.exe
 
@@ -13,6 +13,9 @@ link: $(OBJS)
 	$(CC) $(FLAGS) $*.cpp
 
 %.o: %.cpp Inventory.h
+	$(CC) $(FLAGS) $*.cpp
+
+%.o: %.cpp Menu.h
 	$(CC) $(FLAGS) $*.cpp
 
 clean:

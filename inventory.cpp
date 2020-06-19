@@ -1,8 +1,6 @@
 #include "Inventory.h"
 #include <iostream>
 
-using namespace std;
-
 int Inventory::get_size() {
     return size;
 }
@@ -18,7 +16,10 @@ void Inventory::display_items() {
         } else {
             cout << items[i - 1] << " ";
         }
-    } 
+    }
+   if (get_num_items() == 0) {
+      cout << "Inventory is empty" << endl;
+   } 
 }
 
 int Inventory::add_item(string item) {

@@ -7,4 +7,4 @@ class Trials{
         int intel(); 
 };
 
-void sleep(); 
+void sleep(short time);
