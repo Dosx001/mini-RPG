@@ -5,7 +5,7 @@ using namespace std;
 
 class Inventory{
     private:
-        int size = 10;
+        int size = 40;
         int num_items = 0;
         vector<string> items;
     public:

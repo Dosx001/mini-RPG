@@ -1,5 +1,4 @@
 #include "Inventory.h"
-#include <iostream>
 
 int Inventory::get_size() {
     return size;
@@ -17,9 +16,9 @@ void Inventory::display_items() {
             cout << items[i - 1] << " ";
         }
     }
-   if (get_num_items() == 0) {
-      cout << "Inventory is empty" << endl;
-   } 
+    if (get_num_items() == 0) {
+        cout << "Inventory is empty" << endl;
+    }
 }
 
 int Inventory::add_item(string item) {
@@ -27,9 +26,9 @@ int Inventory::add_item(string item) {
         cout << "Inventory is full!" << endl;
         return 0;
     }
-    ++size;
-    items[size] = item;
-    cout << item << " has been added to your inventory!" << endl;
+    ++num_items;
+    items.push_back(item);
+    cout << items.at(num_items-1) << " has been added to your inventory!" << endl;
     return 1;
 }
 

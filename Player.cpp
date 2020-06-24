@@ -1,5 +1,4 @@
 #include "Player.h"
-#include <iostream>
 
 void Player::create_name() {
     char check_name = ' ';
