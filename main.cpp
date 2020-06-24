@@ -14,7 +14,7 @@ int main() {
    // cout << "Your Speed stat is " << Py.get_speed() << endl;
    // Py.set_intel(Trial.intel());
    // cout << "Your Intel stat is " << Py.get_intel() << endl;
-    Menu Mu;
+    Menu Mu:
     Inventory Invy;
     string item = "stuff";
     for (int i = 0; i <= 27; i++) {
