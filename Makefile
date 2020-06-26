@@ -1,21 +1,13 @@
 CC = c++
-OBJS = main.o Player.o Trials.o Inventory.o Menu.o
+SRCS = main.cpp Player.cpp Trials.cpp Inventory.cpp Menu.cpp pch.cpp
+OBJS = $(SRCS:%.cpp=%.o)
 FLAGS = -c -Wall
 EXE = mini_RPG.exe
 
 link: $(OBJS)
 	$(CC) $(OBJS) -o $(EXE)
 
-%.o: %.cpp Player.h
-	$(CC) $(FLAGS) $*.cpp
-
-%.o: %.cpp Trials.h
-	$(CC) $(FLAGS) $*.cpp
-
-%.o: %.cpp Inventory.h
-	$(CC) $(FLAGS) $*.cpp
-
-%.o: %.cpp Menu.h
+%.o: %.cpp %.h
 	$(CC) $(FLAGS) $*.cpp
 
 clean:

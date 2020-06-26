@@ -1,4 +1,5 @@
-using namespace std;
+#pragma once
+#include "pch.h"
 
 class Trials{
     public:        

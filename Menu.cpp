@@ -6,20 +6,18 @@ void Menu::set_Py_Invy(Player *Py, Inventory *Invy) {
 }
 
 void Menu::quick_menu() {
-    cout << "Full Menu | Inventory | Quit" << endl;
+    std::cout << "Full Menu | Inventory | Quit" << std::endl;
 }
 
 void Menu::full_menu() {
-    string line(40, '_');
-    cout << line << endl;
-    cout << "Name: " << ptrPy -> get_name() << endl;
-    cout << "Health: " << ptrPy -> get_health() << endl; 
-    cout << "Stats: " << "Luck=" << ptrPy -> get_luck() << " Speed="
-    << ptrPy -> get_speed() << " Intel=" << ptrPy -> get_intel() << endl;
+    std::cout << "Name: " << ptrPy -> get_name() << std::endl;
+    std::cout << "Health: " << ptrPy -> get_health() << std::endl; 
+    std::cout << "Stats: " << "Luck=" << ptrPy -> get_luck() << " Speed="
+    << ptrPy -> get_speed() << " Intel=" << ptrPy -> get_intel() << std::endl;
     if (ptrInvy -> get_num_items() == 0) {
-        cout << "Inventory: empty" << endl;
+        std::cout << "Inventory: empty" << std::endl;
     } else {
-        cout << "Inventory: " << endl;
+        std::cout << "Inventory: Capacity=" << ptrInvy -> get_size() << std::endl;
         ptrInvy -> display_items();
     }
 }

@@ -1,16 +1,16 @@
 #include "Player.h"
 
 void Player::create_name() {
-    string check_name = "  ";
-    string new_name;
+    std::string check_name = "  ";
+    std::string new_name;
     while (check_name != "yes") {
-        cout << "What is your name? ";
-        getline(cin, new_name);
+        std::cout << "What is your name? ";
+        getline(std::cin, new_name);
         if (not new_name.empty()) {
             check_name = ' ';
             while (check_name != "no") {
-                cout << "Is your name " << new_name << "? (yes/no) ";
-                getline(cin, check_name);
+                std::cout << "Is your name " << new_name << "? (yes/no) ";
+                getline(std::cin, check_name);
                 if (check_name == "yes") {
                     break;
                 }
@@ -20,7 +20,7 @@ void Player::create_name() {
     name = new_name;
 }
 
-string Player::get_name() {
+std::string Player::get_name() {
     return name;
 }
 

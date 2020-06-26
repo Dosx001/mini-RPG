@@ -1,17 +1,16 @@
-#include <iostream>
-
-using namespace std;
+#pragma once
+#include "pch.h"
 
 class Player{
     private:
-        string name;
+        std::string name;
         int health = 100;
         int speed = 0;
         int luck = 0;
         int intel = 0;
     public:
         void create_name();
-        string get_name();
+        std::string get_name();
         int get_health();
         void set_luck(int guesses);
         int get_luck();

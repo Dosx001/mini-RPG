@@ -1,56 +1,53 @@
 #include "Trials.h"
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
 
 int Trials::speed() {
     long t = time(0);
-    cout << t << endl;
+    std::cout << t << std::endl;
     char hit;
     int hits = 0;
     while (time(0) < t + (short) 5) {
-        cout << "hit" << endl;
-        cin >> hit;
+        std::cout << "hit" << std::endl;
+        std::cin >> hit;
         hits++;
     }
-    cout << "Stop!!!\a" << endl;
-    cout << "Calculating..." << endl;
+    std::cout << "Stop!!!\a" << std::endl;
+    std::cout << "Calculating..." << std::endl;
     sleep(5);
-    cout << "Number of hits: \a" << hits << endl;
-    cin >> hit;
-    cout << hit << endl;
+    std::cout << "Number of hits: \a" << hits << std::endl;
+    std::cin >> hit;
+    std::cout << hit << std::endl;
     return hits;
 }
 
 short Trials::luck() {
     short num;
     short guess;
-    cout << "Pick a number between 1 and 10: " << endl;
-    cin >> guess;
+    std::cout << "Pick a number between 1 and 10: " << std::endl;
+    std::cin >> guess;
     srand(time(0));
     num = rand() % 9 + 1;
     short guesses = 3;
     while (1 < guesses) { 
         guesses--;
         if (guess == num) {
-            cout << "The number is " << num << "!" <<endl;
+            std::cout << "The number is " << num << "!" <<std::endl;
             break;
         }
         else if (guess < num) {
-            cout << "The number is bigger" << endl;
+            std::cout << "The number is bigger" << std::endl;
         } else {
-            cout << "The number is smaller" << endl;
+            std::cout << "The number is smaller" << std::endl;
         }
         if (0 < guesses) {
-        cout << guesses << " more guesses. Try again!\n" << endl;
+        std::cout << guesses << " more guesses. Try again!\n" << std::endl;
         }
-        cin >> guess;
+        std::cin >> guess;
     } 
     if (guess != num) {
-        cout << "Game Over\a" << endl;
+        std::cout << "Game Over\a" << std::endl;
         return guesses;
     } else {
-        cout << "Correct!!!\a" << endl;
+        std::cout << "Correct!!!\a" << std::endl;
         return guesses;
     }
 }
@@ -66,44 +63,44 @@ int Trials::intel() {
         float num1 = rand() % 10;
         float num2 = rand() % 10;
         char op = ops[rand() % 4];
-        cout << "Whats's " << num1 << " " << op << " " << num2 << "?" << endl;
-        cin >> ans;
+        std::cout << "Whats's " << num1 << " " << op << " " << num2 << "?" << std::endl;
+        std::cin >> ans;
         switch(op) {
             case '+':
                 check = num1 + num2;
                 if (ans == check) { 
-                    cout << "Correct!" << endl;
+                    std::cout << "Correct!" << std::endl;
                     correct++;
                     break;
                 }
-                cout << "Wrong. The answer is " << check << endl;
+                std::cout << "Wrong. The answer is " << check << std::endl;
                 break;
             case '-':
                 check = num1 - num2;
                 if (ans == check) {
-                    cout << "Correct!" << endl;
+                    std::cout << "Correct!" << std::endl;
                     correct++;
                     break;
                 }
-                cout << "Wrong. The answer is " << check << endl;
+                std::cout << "Wrong. The answer is " << check << std::endl;
                 break;
             case '*':
                 check = num1 * num2;
                 if (ans == check) {
-                    cout << "Correct!" << endl;
+                    std::cout << "Correct!" << std::endl;
                     correct++;
                     break;
                 }
-                cout << "Wrong. The answer is " << check << endl;
+                std::cout << "Wrong. The answer is " << check << std::endl;
                 break;
             case '/':
                 check = num1 / num2;
                 if (ans == check) {
-                    cout << "Correct!" << endl;
+                    std::cout << "Correct!" << std::endl;
                     correct++;
                     break;
                 }
-                cout << "Wrong. The answer is " << check << endl;
+                std::cout << "Wrong. The answer is " << check << std::endl;
         }
     }
     return correct;
