@@ -1,17 +1,17 @@
 #include "Player.h"
 
 void Player::create_name() {
-    char check_name = ' ';
+    string check_name = "  ";
     string new_name;
-    while (check_name != 'y') {
+    while (check_name != "yes") {
         cout << "What is your name? ";
         getline(cin, new_name);
         if (not new_name.empty()) {
             check_name = ' ';
-            while (check_name != 'n') {
-                cout << "Is your name " << new_name << "? (y/n) ";
-                cin >> check_name;
-                if (check_name == 'y') {
+            while (check_name != "no") {
+                cout << "Is your name " << new_name << "? (yes/no) ";
+                getline(cin, check_name);
+                if (check_name == "yes") {
                     break;
                 }
             }

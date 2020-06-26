@@ -13,12 +13,13 @@ void Inventory::display_items() {
         if (i % 5 == 0) {
             cout << items[i - 1] << endl;
         } else {
-            cout << items[i - 1] << " ";
+            cout << items[i - 1] << " | ";
         }
     }
     if (get_num_items() == 0) {
         cout << "Inventory is empty" << endl;
     }
+    cout << endl;
 }
 
 int Inventory::add_item(string item) {
