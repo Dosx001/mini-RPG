@@ -3,7 +3,7 @@
 
 class Inventory{
     private:
-        int size = 12;
+        int size = 15;
         int num_items = 0;
         std::vector<std::string> items;
     public:
