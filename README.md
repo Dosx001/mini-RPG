@@ -16,9 +16,9 @@ Concepts | Syntax
 :black_square_button: cmake | :white_check_mark: For Loop
 :white_check_mark: Pointers and references | :white_check_mark: While loop
 :black_square_button: Smart pointers | :white_check_mark: Classes:
-:white_check_mark: header files | :white_check_mark: Constructors 
+:white_check_mark: header files | :black_square_button: Constructors 
 :white_check_mark: precompiled header | :black_square_button: Inheritance 
-:black_square_button: Namespace | :black_square_button: Composition 
+:black_square_button: Namespace | :white_check_mark: Composition 
 :black_square_button: Libraries | :black_square_button: Lambdas
 :white_check_mark: Stack vs Heap Memory | :black_square_button: Unions
 :black_square_button: Const | :black_square_button: sorting
@@ -28,7 +28,8 @@ Concepts | Syntax
 ![Bug 1](https://i.imgur.com/AjFiy5S.png)
 * :white_check_mark: "What is your name? " printing multiple times.
 ![Bug 2](https://i.imgur.com/YrTU1St.png)
-* :black_square_button: Not compiling correctly after editing header files.
+* :white_check_mark: Not compiling correctly after editing header files.\
+    * Class attributes in private are not updated when compiled. Issue is fixed when a constructor is created.
 
 # To Do List
 * :white_check_mark: Inventory to hold items
