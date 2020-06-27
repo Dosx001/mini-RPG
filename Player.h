@@ -4,7 +4,7 @@
 class Player{
     private:
         std::string name;
-        int health = 100;
+        int health = 10;
         int speed = 0;
         int luck = 0;
         int intel = 0;
