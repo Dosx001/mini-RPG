@@ -1,5 +1,17 @@
 #include "Player.h"
 
+Player::Player() {
+    create_name();
+    std::cout << "Hello " << get_name() << "!" << std::endl;
+    //Trials Trial;
+    //set_luck(Trial.luck());
+    //std::cout << "Your Luck stat is " << get_luck() << std::endl;
+    //set_speed(Trial.speed());
+    //std::cout << "Your Speed stat is " << get_speed() << std::endl;
+    //set_intel(Trial.intel());
+    //std::cout << "Your Intel stat is " << get_intel() << std::endl;
+}
+
 void Player::create_name() {
     std::string check_name = "  ";
     std::string new_name;

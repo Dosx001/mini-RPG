@@ -16,7 +16,7 @@ Concepts | Syntax
 :black_square_button: cmake | :white_check_mark: For Loop
 :white_check_mark: Pointers and references | :white_check_mark: While loop
 :black_square_button: Smart pointers | :white_check_mark: Classes:
-:white_check_mark: header files | :black_square_button: Constructors 
+:white_check_mark: header files | :white_check_mark: Constructors 
 :white_check_mark: precompiled header | :black_square_button: Inheritance 
 :black_square_button: Namespace | :black_square_button: Composition 
 :black_square_button: Libraries | :black_square_button: Lambdas
