@@ -1,5 +1,5 @@
 CC = c++
-SRCS = main.cpp Player.cpp Trials.cpp Inventory.cpp Menu.cpp pch.cpp
+SRCS = $(wildcard *.cpp)
 OBJS = $(SRCS:%.cpp=%.o)
 FLAGS = -c -Wall
 EXE = mini_RPG.exe
