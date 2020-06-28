@@ -22,14 +22,22 @@ Concepts | Syntax
 :black_square_button: Libraries | :black_square_button: Lambdas
 :white_check_mark: Stack vs Heap Memory | :black_square_button: Unions
 :black_square_button: Const | :black_square_button: sorting
+:black_square_button: C casting |
+:black_square_button: C++ casting | 
+:black_square_button: Access Specifiers: Protected | 
+:black_square_button: Lvalues and Rvalues | 
+:black_square_button: Move Semantics | 
 
 # Bugs 
 * :white_check_mark: Quick menu printing twice inside the while loop on the first loop.
 ![Bug 1](https://i.imgur.com/AjFiy5S.png)
 * :white_check_mark: "What is your name? " printing multiple times.
 ![Bug 2](https://i.imgur.com/YrTU1St.png)
-* :white_check_mark: Not compiling correctly after editing header files.\
+* :white_check_mark: Not compiling correctly after editing header files.
     * Class attributes in private are not updated when compiled. Issue is fixed when a constructor is created.
+* :black_square_button: Overloads when wrong data type is enter.  
+![Bug 3](https://i.imgur.com/lvPDtcc.png?1)
+
 
 # To Do List
 * :white_check_mark: Inventory to hold items
