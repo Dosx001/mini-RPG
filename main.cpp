@@ -2,14 +2,13 @@
 #include "Inventory.h"
 #include "Menu.h"
 
-int main() { 
-    Player Py;
-    Player *ptrPy = &Py;
+int main() {
     Inventory Invy;
     Inventory *ptrInvy = &Invy;
+    Player Py(ptrInvy);
+    Player *ptrPy = &Py;
     Menu Mu(ptrPy, ptrInvy);
-    Invy.add_item("Rusty sword");
-    Invy.add_item("Rusty shield");
+    std::cin.ignore();
     std::string input = "Start";
     while (input != "Quit") {
         Mu.quick_menu();
