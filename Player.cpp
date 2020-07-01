@@ -1,18 +1,14 @@
 #include "Player.h"
 
-Player::Player() {
-    create_name();
-    std::cout << "Hello " << get_name() << "!" << std::endl;
-    //Trials Trial;
-    //set_luck(Trial.luck());
-    //std::cout << "Your Luck stat is " << get_luck() << std::endl;
-    //set_speed(Trial.speed());
-    //std::cout << "Your Speed stat is " << get_speed() << std::endl;
-    //set_intel(Trial.intel());
-    //std::cout << "Your Intel stat is " << get_intel() << std::endl;
+Player::Player(Inventory *Invy) {
+    ptrInvy = Invy;
+    createName();
+    std::cout << "Hello " << name << "!" << std::endl;
+    setCls();
+    setStats();
 }
 
-void Player::create_name() {
+void Player::createName() {
     std::string check_name = "  ";
     std::string new_name;
     while (check_name != "yes") {
@@ -32,15 +28,35 @@ void Player::create_name() {
     name = new_name;
 }
 
-std::string Player::get_name() {
-    return name;
+void Player::setCls() {
+    std::string pick = "None";
+    while (true) {
+        std::cout << "Pick a class! Warrior | Hunter | Sorcerer" << std::endl;
+        getline(std::cin, pick);
+            if (pick == "Warrior") {
+                ptrInvy -> add_item("Rusty Sword");
+                ptrInvy -> add_item("Rusty Shield");
+                ptrCls = new Warrior;
+                break;
+            }
+            if (pick == "Hunter") {
+                ptrInvy -> add_item("Wooden Bow");
+                ptrInvy -> add_item("Rusty Dagger");
+                ptrCls = new Hunter;
+                break;
+            }
+            if (pick == "Sorcerer") {
+                ptrInvy -> add_item("Wooden Wand");
+                ptrInvy -> add_item("Rusty Necklace");
+                ptrCls = new Sorcerer;
+                break;
+            }
+    }
+    pick.copy(classType, pick.size() + 1);
+    ptrCls -> test();
 }
 
-int Player::get_health() {
-    return health;
-}
-
-void Player::set_luck(int guesses) {
+void Player::setLuck(int guesses) {
     switch(guesses) {
         case 2:
             luck = 10;
@@ -53,22 +69,44 @@ void Player::set_luck(int guesses) {
     }
 }
 
-int Player::get_luck() {
-    return luck;
-}
-
-void Player::set_speed(int hits) {
+void Player::setSpeed(int hits) {
     speed = hits / 3;
 }
 
-int Player::get_speed() {
-    return speed;
-}
-
-void Player::set_intel(int correct) {
+void Player::setIntel(int correct) {
     intel = correct;
 }
 
-int Player::get_intel() {
+void Player::setStats() {
+    Trials Trial;
+    setLuck(Trial.luck());
+    std::cout << "Your Luck stat is " << luck << std::endl;
+    setSpeed(Trial.speed());
+    std::cout << "Your Speed stat is " << speed << std::endl;
+    setIntel(Trial.intel());
+    std::cout << "Your Intel stat is " << intel << std::endl;
+}
+
+std::string Player::getName() {
+    return name;
+}
+
+const char* Player::getClassType() {
+    return classType;
+}
+
+int Player::getHealth() {
+    return health;
+}
+
+int Player::getLuck() {
+    return luck;
+}
+
+int Player::getSpeed() {
+    return speed;
+}
+
+int Player::getIntel() {
     return intel;
 }

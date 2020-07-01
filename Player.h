@@ -1,23 +1,36 @@
 #pragma once
+#include "Inventory.h"
+#include "Classes.h"
 #include "Trials.h"
 #include "pch.h"
 
 class Player{
     private:
         std::string name;
+        Inventory *ptrInvy;
+        Class *ptrCls;
+        char classType[8];
         int health = 100;
         int speed = 0;
         int luck = 0;
         int intel = 0;
+        int wisdom = 0;
+        int strength = 0;
+        int charisma = 0;
     public:
-        Player();
-        void create_name();
-        std::string get_name();
-        int get_health();
-        void set_luck(int guesses);
-        int get_luck();
-        void set_speed(int hits);
-        int get_speed();
-        void set_intel(int correct);
-        int get_intel();
+        Player(Inventory *Invy);
+    private:
+        void createName();
+        void setCls();
+        void setLuck(int guesses);
+        void setSpeed(int hits);
+        void setIntel(int correct);
+        void setStats();
+    public:
+        std::string getName();
+        const char* getClassType();
+        int getHealth();
+        int getLuck();
+        int getSpeed();
+        int getIntel();
 };
