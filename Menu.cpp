@@ -10,10 +10,11 @@ void Menu::quick_menu() {
 }
 
 void Menu::full_menu() {
-    std::cout << "Name: " << ptrPy -> get_name() << std::endl;
-    std::cout << "Health: " << ptrPy -> get_health() << std::endl; 
-    std::cout << "Stats: " << "Luck=" << ptrPy -> get_luck() << " Speed="
-    << ptrPy -> get_speed() << " Intel=" << ptrPy -> get_intel() << std::endl;
+    std::cout << "Name: " << ptrPy -> getName() << " | Class: " <<
+    ptrPy -> getClassType() << std::endl;
+    std::cout << "Health: " << ptrPy -> getHealth() << std::endl; 
+    std::cout << "Stats: " << "Luck=" << ptrPy -> getLuck() << " Speed="
+    << ptrPy -> getSpeed() << " Intel=" << ptrPy -> getIntel() << std::endl;
     if (ptrInvy -> get_num_items() == 0) {
         std::cout << "Inventory: empty" << std::endl;
     } else {
