@@ -13,9 +13,13 @@ int Trials::speed() {
     std::cout << "Stop!!!\a" << std::endl;
     std::cout << "Calculating..." << std::endl;
     sleep(5);
+    t = time(0);
+    while (time(0) < t + (short) 3) {
+        std::cin.ignore();
+    }
     std::cout << "Number of hits: \a" << hits << std::endl;
-    std::cin >> hit;
-    std::cout << hit << std::endl;
+    //std::cin >> hit;
+    //std::cout << hit << std::endl;
     return hits;
 }
 
