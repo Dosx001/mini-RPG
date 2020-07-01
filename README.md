@@ -16,17 +16,17 @@ Concepts | Syntax
 :black_square_button: cmake | :white_check_mark: For Loop
 :white_check_mark: Pointers and references | :white_check_mark: While loop
 :black_square_button: Smart pointers | :white_check_mark: Classes:
-:white_check_mark: header files | :black_square_button: Constructors 
-:white_check_mark: precompiled header | :black_square_button: Inheritance 
+:white_check_mark: header files | :white_check_mark: Constructors 
+:white_check_mark: precompiled header | :white_check_mark: Inheritance 
 :black_square_button: Namespace | :white_check_mark: Composition 
 :black_square_button: Libraries | :black_square_button: Lambdas
 :white_check_mark: Stack vs Heap Memory | :black_square_button: Unions
 :black_square_button: Const | :black_square_button: sorting
-:black_square_button: C casting |
-:black_square_button: C++ casting | 
+:black_square_button: C/C++ casting | 
 :black_square_button: Access Specifiers: Protected | 
 :black_square_button: Lvalues and Rvalues | 
 :black_square_button: Move Semantics | 
+:black_square_button: Friend | 
 
 # Bugs 
 * :white_check_mark: Quick menu printing twice inside the while loop on the first loop.
@@ -57,6 +57,7 @@ Concepts | Syntax
 * :black_square_button: Enemies
 * :black_square_button: Leveling up
 * :black_square_button: Classes e.g. Warrior, Sorcerer, Hunter
+    * :black_square_button: subclass?
 * :black_square_button: Equipment
 * :black_square_button: Turn based battle system?
 * :black_square_button: Installation file
