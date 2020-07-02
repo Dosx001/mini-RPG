@@ -29,13 +29,21 @@ Concepts | Syntax
 :black_square_button: Friend | 
 
 # Bugs 
-* :white_check_mark: Quick menu printing twice inside the while loop on the first loop.
+:white_check_mark: **Bug 1**
+* Quick menu printing twice inside the while loop on the first loop.
 ![Bug 1](https://i.imgur.com/AjFiy5S.png)
-* :white_check_mark: "What is your name? " printing multiple times.
+
+:white_check_mark: **Bug 2** 
+* "What is your name? " printing multiple times.
 ![Bug 2](https://i.imgur.com/YrTU1St.png)
-* :white_check_mark: Not compiling correctly after editing header files.
-    * Class attributes in private are not updated when compiled. Issue is fixed when a constructor is created.
-* :black_square_button: Overloads when wrong data type is enter.  
+
+:white_check_mark: **Bug 3**
+* Not compiling correctly after editing header files.
+    * Class attributes in private are not updated when compiled. 
+    * **FIX:** Provided correct dependencies to Makefile
+
+:black_square_button: **Bug 4** 
+* Overloads when wrong data type is enter.  
 ![Bug 3](https://i.imgur.com/lvPDtcc.png?1)
 
 
