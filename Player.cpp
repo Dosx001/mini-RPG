@@ -36,18 +36,27 @@ void Player::setCls() {
             if (pick == "Warrior") {
                 ptrInvy -> add_item("Rusty Sword");
                 ptrInvy -> add_item("Rusty Shield");
+                strength = 2;
+                charisma = 2;
+                std::cout << "Strength +2\nCharisma +2" << std::endl;
                 ptrCls = new Warrior;
                 break;
             }
             if (pick == "Hunter") {
                 ptrInvy -> add_item("Wooden Bow");
                 ptrInvy -> add_item("Rusty Dagger");
+                speed = 2;
+                luck = 2;
+                std::cout << "Speed +2\nLuck +2" << std::endl;
                 ptrCls = new Hunter;
                 break;
             }
             if (pick == "Sorcerer") {
                 ptrInvy -> add_item("Wooden Wand");
                 ptrInvy -> add_item("Rusty Necklace");
+                intel = 2;
+                wisdom = 2;
+                std::cout << "Intel +2\nWisdom +2" << std::endl;
                 ptrCls = new Sorcerer;
                 break;
             }
@@ -59,22 +68,22 @@ void Player::setCls() {
 void Player::setLuck(int guesses) {
     switch(guesses) {
         case 2:
-            luck = 10;
+            luck =+ 10;
             break;
         case 1:
-            luck = 5;
+            luck =+ 5;
             break;
         case 0:
-            luck = 1;
+            luck =+ 1;
     }
 }
 
 void Player::setSpeed(int hits) {
-    speed = hits / 3;
+    speed =+ hits / 3;
 }
 
 void Player::setIntel(int correct) {
-    intel = correct;
+    intel =+ correct;
 }
 
 void Player::setStats() {
@@ -109,4 +118,16 @@ int Player::getSpeed() {
 
 int Player::getIntel() {
     return intel;
+}
+
+int Player::getWisdom() {
+    return wisdom;
+}
+
+int Player::getStrength() {
+    return strength;
+}
+
+int Player::getCharisma() {
+    return charisma;
 }

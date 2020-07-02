@@ -33,4 +33,7 @@ class Player{
         int getLuck();
         int getSpeed();
         int getIntel();
+        int getWisdom();
+        int getStrength();
+        int getCharisma();
 };
