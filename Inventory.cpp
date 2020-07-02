@@ -1,8 +1,5 @@
 #include "Inventory.h"
 
-Inventory::Inventory() {
-}
-
 int Inventory::get_size() {
     return size;
 }

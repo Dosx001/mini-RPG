@@ -7,7 +7,6 @@ class Inventory{
         int num_items = 0;
         std::vector<std::string> items;
     public:
-        Inventory();
         int get_size();
         int get_num_items();
         void display_items();
