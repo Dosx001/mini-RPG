@@ -1,20 +1,22 @@
 #include "Menu.h"
 
-void Menu::set_Py_Invy(Player *Py, Inventory *Invy) {
+Menu::Menu(Player *Py, Inventory *Invy) {
     ptrPy = Py;
     ptrInvy = Invy;
 }
 
-void Menu::quick_menu() {
+void Menu::quickMenu() {
     std::cout << "Full Menu | Inventory | Quit" << std::endl;
 }
 
-void Menu::full_menu() {
+void Menu::fullMenu() {
     std::cout << "Name: " << ptrPy -> getName() << " | Class: " <<
     ptrPy -> getClassType() << std::endl;
     std::cout << "Health: " << ptrPy -> getHealth() << std::endl; 
     std::cout << "Stats: " << "Luck=" << ptrPy -> getLuck() << " Speed="
-    << ptrPy -> getSpeed() << " Intel=" << ptrPy -> getIntel() << std::endl;
+    << ptrPy -> getSpeed() << " Intel=" << ptrPy -> getIntel() << " Wisdom="
+    << ptrPy -> getWisdom() << " Strength=" << ptrPy -> getStrength()
+    << " Charisma=" << ptrPy -> getCharisma() << std::endl;
     if (ptrInvy -> get_num_items() == 0) {
         std::cout << "Inventory: empty" << std::endl;
     } else {
