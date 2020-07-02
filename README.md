@@ -64,7 +64,7 @@ Concepts | Syntax
 * :black_square_button: Levels
 * :black_square_button: Enemies
 * :black_square_button: Leveling up
-* :black_square_button: Classes e.g. Warrior, Sorcerer, Hunter
+* :white_check_mark: Classes e.g. Warrior, Sorcerer, Hunter
     * :black_square_button: subclass?
 * :black_square_button: Equipment
 * :black_square_button: Turn based battle system?
