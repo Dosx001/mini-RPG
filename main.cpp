@@ -11,12 +11,12 @@ int main() {
     std::cin.ignore();
     std::string input = "Start";
     while (input != "Quit") {
-        Mu.quick_menu();
+        Mu.quickMenu();
         getline(std::cin, input);
         std::string line(50, '_');
         std::cout << line << std::endl;
         if (input == "Full Menu" || input == "Full") {
-            Mu.full_menu();
+            Mu.fullMenu();
         }
         if (input == "Inventory" || input == "Inve") {
             Invy.display_items();
