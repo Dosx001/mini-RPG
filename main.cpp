@@ -9,11 +9,11 @@ int main() {
     Player *ptrPy = &Py;
     Menu Mu(ptrPy, ptrInvy);
     std::cin.ignore();
+    std::string line(50, '_');
     std::string input = "Start";
     while (input != "Quit") {
         Mu.quickMenu();
         getline(std::cin, input);
-        std::string line(50, '_');
         std::cout << line << std::endl;
         if (input == "Full Menu" || input == "Full") {
             Mu.fullMenu();
