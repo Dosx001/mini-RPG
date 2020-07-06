@@ -1,5 +1,5 @@
 # mini-RPG
-Just trying to learn C++ by creating a simple text game.
+Just trying to learn C++ by creating a simple text game.\
 **Please note** that this is not production level code. This is my playground to experiment and learn C++. I will gladly accept constructive feedback but please do not ridicule me because you disapprove of the way I coded something.
 # Table of Contents
 * [C++ Syntax and Concepts to Learn](#c++-syntax-and-concepts-to-learn)
@@ -27,7 +27,7 @@ Concepts | Syntax
 :black_square_button: Lvalues and Rvalues | 
 :black_square_button: Move Semantics | 
 :black_square_button: Friend | 
-:black_square_button: Struct |
+:white_check_mark: Struct |
 
 # Bugs 
 :white_check_mark: **Bug 1**
