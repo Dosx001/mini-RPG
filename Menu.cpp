@@ -12,7 +12,8 @@ void Menu::quickMenu() {
 void Menu::fullMenu() {
     std::cout << "Name: " << ptrPy -> getName() << " | Class: " <<
     ptrPy -> getClassType() << std::endl;
-    std::cout << "Health: " << ptrPy -> getHealth() << std::endl; 
+    std::cout << "Health: " << ptrPy -> getHealth() << 
+    " | Mana: " << ptrPy -> getMana() << std::endl; 
     std::cout << "Stats: " << "Luck=" << ptrPy -> getLuck() << " Speed="
     << ptrPy -> getSpeed() << " Intel=" << ptrPy -> getIntel() << " Wisdom="
     << ptrPy -> getWisdom() << " Strength=" << ptrPy -> getStrength()
@@ -23,4 +24,6 @@ void Menu::fullMenu() {
         std::cout << "Inventory: Capacity=" << ptrInvy -> get_size() << std::endl;
         ptrInvy -> display_items();
     }
+    std::cout << "Health Potions: " << ptrInvy -> getHP() << "/" << ptrInvy -> getMaxPotions() <<
+    " Mana Potions: " << ptrInvy -> getMP() << "/" << ptrInvy -> getMaxPotions() << std::endl;
 }
