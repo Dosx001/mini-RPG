@@ -5,7 +5,7 @@ Player::Player(Inventory *Invy) {
     createName();
     std::cout << "Hello " << name << "!" << std::endl;
     setCls();
-    setStats();
+    //setStats();
 }
 
 void Player::createName() {
@@ -29,6 +29,13 @@ void Player::createName() {
 }
 
 void Player::setCls() {
+    Ptrs Stats;
+    Stats.ptrSpd = &speed;
+    Stats.ptrLuk = &luck;
+    Stats.ptrInt = &intel;
+    Stats.ptrWid = &wisdom;
+    Stats.ptrStr = &strength;
+    Stats.ptrChr = &charisma;
     std::string pick = "None";
     while (true) {
         std::cout << "Pick a class! Warrior | Hunter | Sorcerer" << std::endl;
@@ -62,6 +69,7 @@ void Player::setCls() {
             }
     }
     pick.copy(classType, pick.size() + 1);
+    ptrCls -> stats = Stats; 
     ptrCls -> test();
 }
 
