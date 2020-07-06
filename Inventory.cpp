@@ -55,3 +55,23 @@ int Inventory::remove_item(std::string item) {
     std::cout << item << " not in Inventory." << std::endl;
     return 0;
 }
+
+void Inventory::addHP() {
+    if (healthPotions == maxPotions) {
+        std::cout << "At max capacity" << std::endl;
+    } else {
+        healthPotions++;
+    }
+}
+
+void Inventory::addMP() {
+    if (manaPotions == maxPotions) {
+        std::cout << "At max capacity" << std::endl;
+    } else {
+        healthPotions++;
+    }
+}
+
+int Inventory::getMaxPotions() {
+    return maxPotions;
+}

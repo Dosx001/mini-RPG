@@ -6,6 +6,9 @@ class Inventory{
         int size = 10;
         int num_items = 0;
         std::vector<std::string> items;
+        int maxPotions = 10;
+        int healthPotions = 2;
+        int manaPotions = 2;
     public:
         Inventory();
         int get_size();
@@ -13,4 +16,7 @@ class Inventory{
         void display_items();
         int add_item(std::string item);
         int remove_item(std::string item);
+        void addHP();
+        void addMP();
+        int getMaxPotions();
 };
