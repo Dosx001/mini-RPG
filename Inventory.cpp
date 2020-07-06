@@ -30,7 +30,6 @@ void Inventory::display_items() {
             }
         }
     }
-    std::cout << std::endl;
 }
 
 int Inventory::add_item(std::string item) {
@@ -70,6 +69,14 @@ void Inventory::addMP() {
     } else {
         healthPotions++;
     }
+}
+
+int Inventory::getHP() {
+    return healthPotions;
+}
+
+int Inventory::getMP() {
+    return manaPotions;
 }
 
 int Inventory::getMaxPotions() {

@@ -18,5 +18,7 @@ class Inventory{
         int remove_item(std::string item);
         void addHP();
         void addMP();
+        int getHP();
+        int getMP();
         int getMaxPotions();
 };
