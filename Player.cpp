@@ -1,7 +1,6 @@
 #include "Player.h"
 
-Player::Player(Inventory *Invy) {
-    ptrInvy = Invy;
+Player::Player(Inventory *Invy) :ptrInvy(Invy) {
     createName();
     std::cout << "Hello " << name << "!" << std::endl;
     setCls();
@@ -70,7 +69,6 @@ void Player::setCls() {
     Stats.ptrStr = &strength;
     Stats.ptrChr = &charisma;
     ptrCls -> stats = Stats; 
-    ptrCls -> test();
 }
 
 void Player::setLuck(int guesses) {

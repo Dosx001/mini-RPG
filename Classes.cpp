@@ -1,11 +1,9 @@
 #include "Classes.h"
 
 int Class::attack() {
-    return 0;
 }
 
 int Class::defense() {
-    return 0;
 }
 
 int Warrior::attack() {
@@ -13,7 +11,7 @@ int Warrior::attack() {
 }
 
 int Warrior::defense() {
-    return 0;
+    return 10 + *stats.ptrChr * .5;
 }
 
 int Hunter::attack() {
@@ -21,7 +19,7 @@ int Hunter::attack() {
 }
 
 int Hunter::defense() {
-    return 0;
+    return 10 + *stats.ptrLuk * .5;
 }
 
 int Sorcerer::attack() {
