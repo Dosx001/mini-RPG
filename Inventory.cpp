@@ -3,26 +3,26 @@
 Inventory::Inventory() {
 }
 
-int Inventory::get_size() {
+int Inventory::getSize() {
     return size;
 }
 
-int Inventory::get_num_items() {
-    return num_items;
+int Inventory::getNumItems() {
+    return numItems;
 }
 
-void Inventory::display_items() {
-    if (num_items == 0) {
+void Inventory::displayItems() {
+    if (numItems == 0) {
         std::cout << "Inventory is empty" << std::endl;
     } else {
-        for (int i = 1; i < num_items + 1; i++) {
+        for (int i = 1; i < numItems + 1; i++) {
             if (i % 5 == 0) {
                 std::cout << items[i - 1] << std::endl;
             } else {
                 std::cout << items[i - 1] << " | ";
             }
         }
-        for (int i = num_items + 1; i <= size; i++) {
+        for (int i = numItems + 1; i <= size; i++) {
             if (i % 5 == 0) {
                 std::cout << "____" << std::endl;
             } else {
@@ -30,22 +30,21 @@ void Inventory::display_items() {
             }
         }
     }
-    std::cout << std::endl;
 }
 
-int Inventory::add_item(std::string item) {
-    if (num_items == size) {
+int Inventory::addItem(std::string item) {
+    if (numItems == size) {
         std::cout << "Inventory is full!" << std::endl;
         return 0;
     }
-    ++num_items;
+    ++numItems;
     items.push_back(item);
-    std::cout << items.at(num_items-1) << " has been added to your inventory!" << std::endl;
+    std::cout << items.at(numItems-1) << " has been added to your inventory!" << std::endl;
     return 1;
 }
 
-int Inventory::remove_item(std::string item) {
-    for (int i = 0; i < num_items; i++) {
+int Inventory::removeItem(std::string item) {
+    for (int i = 0; i < numItems; i++) {
         if (item == items[i]){
             items.erase(items.begin() + i);
             std::cout << item << " has been removed." << std::endl;
@@ -54,4 +53,32 @@ int Inventory::remove_item(std::string item) {
     } 
     std::cout << item << " not in Inventory." << std::endl;
     return 0;
+}
+
+void Inventory::addHP() {
+    if (healthPotions == maxPotions) {
+        std::cout << "At max capacity" << std::endl;
+    } else {
+        healthPotions++;
+    }
+}
+
+void Inventory::addMP() {
+    if (manaPotions == maxPotions) {
+        std::cout << "At max capacity" << std::endl;
+    } else {
+        healthPotions++;
+    }
+}
+
+int Inventory::getHP() {
+    return healthPotions;
+}
+
+int Inventory::getMP() {
+    return manaPotions;
+}
+
+int Inventory::getMaxPotions() {
+    return maxPotions;
 }

@@ -19,7 +19,7 @@ int main() {
             Mu.fullMenu();
         }
         if (input == "Inventory" || input == "Inve") {
-            Invy.display_items();
+            Invy.displayItems();
         }
         std::cout << std::endl;
     }

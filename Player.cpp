@@ -5,7 +5,7 @@ Player::Player(Inventory *Invy) {
     createName();
     std::cout << "Hello " << name << "!" << std::endl;
     setCls();
-    //setStats();
+    setStats();
 }
 
 void Player::createName() {
@@ -29,20 +29,13 @@ void Player::createName() {
 }
 
 void Player::setCls() {
-    Ptrs Stats;
-    Stats.ptrSpd = &speed;
-    Stats.ptrLuk = &luck;
-    Stats.ptrInt = &intel;
-    Stats.ptrWid = &wisdom;
-    Stats.ptrStr = &strength;
-    Stats.ptrChr = &charisma;
     std::string pick = "None";
     while (true) {
         std::cout << "Pick a class! Warrior | Hunter | Sorcerer" << std::endl;
         getline(std::cin, pick);
             if (pick == "Warrior") {
-                ptrInvy -> add_item("Rusty Sword");
-                ptrInvy -> add_item("Rusty Shield");
+                ptrInvy -> addItem("Rusty Sword");
+                ptrInvy -> addItem("Rusty Shield");
                 strength = 2;
                 charisma = 2;
                 std::cout << "Strength +2\nCharisma +2" << std::endl;
@@ -50,8 +43,8 @@ void Player::setCls() {
                 break;
             }
             if (pick == "Hunter") {
-                ptrInvy -> add_item("Wooden Bow");
-                ptrInvy -> add_item("Rusty Dagger");
+                ptrInvy -> addItem("Wooden Bow");
+                ptrInvy -> addItem("Rusty Dagger");
                 speed = 2;
                 luck = 2;
                 std::cout << "Speed +2\nLuck +2" << std::endl;
@@ -59,8 +52,8 @@ void Player::setCls() {
                 break;
             }
             if (pick == "Sorcerer") {
-                ptrInvy -> add_item("Wooden Wand");
-                ptrInvy -> add_item("Rusty Necklace");
+                ptrInvy -> addItem("Wooden Wand");
+                ptrInvy -> addItem("Rusty Necklace");
                 intel = 2;
                 wisdom = 2;
                 std::cout << "Intel +2\nWisdom +2" << std::endl;
@@ -69,6 +62,13 @@ void Player::setCls() {
             }
     }
     pick.copy(classType, pick.size() + 1);
+    Ptrs Stats;
+    Stats.ptrSpd = &speed;
+    Stats.ptrLuk = &luck;
+    Stats.ptrInt = &intel;
+    Stats.ptrWid = &wisdom;
+    Stats.ptrStr = &strength;
+    Stats.ptrChr = &charisma;
     ptrCls -> stats = Stats; 
     ptrCls -> test();
 }
@@ -114,6 +114,10 @@ const char* Player::getClassType() {
 
 int Player::getHealth() {
     return health;
+}
+
+int Player::getMana() {
+    return mana;
 }
 
 int Player::getLuck() {

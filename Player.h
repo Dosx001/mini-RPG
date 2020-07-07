@@ -11,6 +11,7 @@ class Player{
         Class *ptrCls;
         char classType[8];
         int health = 100;
+        int mana = 100;
         int speed = 0;
         int luck = 0;
         int intel = 0;
@@ -30,6 +31,7 @@ class Player{
         std::string getName();
         const char* getClassType();
         int getHealth();
+        int getMana();
         int getLuck();
         int getSpeed();
         int getIntel();
