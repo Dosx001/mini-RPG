@@ -1,9 +1,6 @@
 #include "Menu.h"
 
-Menu::Menu(Player *Py, Inventory *Invy) {
-    ptrPy = Py;
-    ptrInvy = Invy;
-}
+Menu::Menu(Player *Py, Inventory *Invy) :ptrPy(Py), ptrInvy(Invy) {}
 
 void Menu::quickMenu() {
     std::cout << "Full Menu | Inventory | Quit" << std::endl;
