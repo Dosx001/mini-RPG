@@ -71,7 +71,7 @@ void Player::setCls() {
     ptrCls -> stats = Stats; 
 }
 
-void Player::setLuck(int guesses) {
+void Player::setLuck(unsigned short guesses) {
     switch(guesses) {
         case 2:
             luck =+ 10;
@@ -84,11 +84,11 @@ void Player::setLuck(int guesses) {
     }
 }
 
-void Player::setSpeed(int hits) {
+void Player::setSpeed(unsigned short hits) {
     speed =+ hits / 3;
 }
 
-void Player::setIntel(int correct) {
+void Player::setIntel(unsigned short correct) {
     intel =+ correct;
 }
 
@@ -110,34 +110,34 @@ const char* Player::getClassType() {
     return classType;
 }
 
-int Player::getHealth() {
+unsigned int Player::getHealth() {
     return health;
 }
 
-int Player::getMana() {
+unsigned int Player::getMana() {
     return mana;
 }
 
-int Player::getLuck() {
+unsigned short Player::getLuck() {
     return luck;
 }
 
-int Player::getSpeed() {
+unsigned short Player::getSpeed() {
     return speed;
 }
 
-int Player::getIntel() {
+unsigned short Player::getIntel() {
     return intel;
 }
 
-int Player::getWisdom() {
+unsigned short Player::getWisdom() {
     return wisdom;
 }
 
-int Player::getStrength() {
+unsigned short Player::getStrength() {
     return strength;
 }
 
-int Player::getCharisma() {
+unsigned short Player::getCharisma() {
     return charisma;
 }

@@ -1,6 +1,6 @@
 #include "Trials.h"
 
-int Trials::speed() {
+unsigned short Trials::speed() {
     long t = time(0);
     std::cout << t << std::endl;
     char hit;
@@ -23,7 +23,7 @@ int Trials::speed() {
     return hits;
 }
 
-short Trials::luck() {
+unsigned short Trials::luck() {
     short num;
     short guess;
     std::cout << "Pick a number between 1 and 10: " << std::endl;
@@ -56,7 +56,7 @@ short Trials::luck() {
     }
 }
 
-int Trials::intel() {
+unsigned short Trials::intel() {
     char ops [4] = {'+','-','*','/'};
     float ans;
     srand(time(0));

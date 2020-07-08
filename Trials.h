@@ -3,9 +3,9 @@
 
 class Trials{
     public:        
-        int speed();
-        short luck(); 
-        int intel(); 
+        unsigned short speed();
+        unsigned short luck(); 
+        unsigned short  intel(); 
 };
 
 void sleep(short time);

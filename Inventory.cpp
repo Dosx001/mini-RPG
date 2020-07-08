@@ -1,13 +1,10 @@
 #include "Inventory.h"
 
-Inventory::Inventory() {
-}
-
-int Inventory::getSize() {
+unsigned short Inventory::getSize() {
     return size;
 }
 
-int Inventory::getNumItems() {
+unsigned short Inventory::getNumItems() {
     return numItems;
 }
 
@@ -15,14 +12,14 @@ void Inventory::displayItems() {
     if (numItems == 0) {
         std::cout << "Inventory is empty" << std::endl;
     } else {
-        for (int i = 1; i < numItems + 1; i++) {
+        for (unsigned short i = 1; i < numItems + 1; i++) {
             if (i % 5 == 0) {
                 std::cout << items[i - 1] << std::endl;
             } else {
                 std::cout << items[i - 1] << " | ";
             }
         }
-        for (int i = numItems + 1; i <= size; i++) {
+        for (unsigned short i = numItems + 1; i <= size; i++) {
             if (i % 5 == 0) {
                 std::cout << "____" << std::endl;
             } else {
@@ -32,7 +29,7 @@ void Inventory::displayItems() {
     }
 }
 
-int Inventory::addItem(std::string item) {
+unsigned short Inventory::addItem(std::string item) {
     if (numItems == size) {
         std::cout << "Inventory is full!" << std::endl;
         return 0;
@@ -43,8 +40,8 @@ int Inventory::addItem(std::string item) {
     return 1;
 }
 
-int Inventory::removeItem(std::string item) {
-    for (int i = 0; i < numItems; i++) {
+unsigned short Inventory::removeItem(std::string item) {
+    for (unsigned short i = 0; i < numItems; i++) {
         if (item == items[i]){
             items.erase(items.begin() + i);
             std::cout << item << " has been removed." << std::endl;
@@ -71,14 +68,14 @@ void Inventory::addMP() {
     }
 }
 
-int Inventory::getHP() {
+unsigned short Inventory::getHP() {
     return healthPotions;
 }
 
-int Inventory::getMP() {
+unsigned short Inventory::getMP() {
     return manaPotions;
 }
 
-int Inventory::getMaxPotions() {
+unsigned short Inventory::getMaxPotions() {
     return maxPotions;
 }
