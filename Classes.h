@@ -3,12 +3,12 @@
 
 struct Ptrs {
     public:
-        unsigned short *ptrSpd;
-        unsigned short *ptrLuk;
-        unsigned short *ptrInt;
-        unsigned short *ptrWid;
-        unsigned short *ptrStr;
-        unsigned short *ptrChr;
+        const unsigned short* ptrSpd;
+        const unsigned short* ptrLuk;
+        const unsigned short* ptrInt;
+        const unsigned short* ptrWid;
+        const unsigned short* ptrStr;
+        const unsigned short* ptrChr;
 };
 
 class Class {
