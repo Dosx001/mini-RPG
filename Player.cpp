@@ -102,42 +102,42 @@ void Player::setStats() {
     std::cout << "Your Intel stat is " << intel << std::endl;
 }
 
-std::string Player::getName() {
+std::string Player::getName() const {
     return name;
 }
 
-const char* Player::getClassType() {
+const char* Player::getClassType() const {
     return classType;
 }
 
-unsigned int Player::getHealth() {
+unsigned int Player::getHealth() const {
     return health;
 }
 
-unsigned int Player::getMana() {
+unsigned int Player::getMana() const {
     return mana;
 }
 
-unsigned short Player::getLuck() {
+unsigned short Player::getLuck() const {
     return luck;
 }
 
-unsigned short Player::getSpeed() {
+unsigned short Player::getSpeed() const {
     return speed;
 }
 
-unsigned short Player::getIntel() {
+unsigned short Player::getIntel() const {
     return intel;
 }
 
-unsigned short Player::getWisdom() {
+unsigned short Player::getWisdom() const {
     return wisdom;
 }
 
-unsigned short Player::getStrength() {
+unsigned short Player::getStrength() const {
     return strength;
 }
 
-unsigned short Player::getCharisma() {
+unsigned short Player::getCharisma() const {
     return charisma;
 }

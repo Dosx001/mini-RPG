@@ -1,10 +1,10 @@
 #include "Inventory.h"
 
-unsigned short Inventory::getSize() {
+unsigned short Inventory::getSize() const {
     return size;
 }
 
-unsigned short Inventory::getNumItems() {
+unsigned short Inventory::getNumItems() const {
     return numItems;
 }
 
@@ -68,14 +68,14 @@ void Inventory::addMP() {
     }
 }
 
-unsigned short Inventory::getHP() {
+unsigned short Inventory::getHP() const {
     return healthPotions;
 }
 
-unsigned short Inventory::getMP() {
+unsigned short Inventory::getMP() const {
     return manaPotions;
 }
 
-unsigned short Inventory::getMaxPotions() {
+unsigned short Inventory::getMaxPotions() const {
     return maxPotions;
 }

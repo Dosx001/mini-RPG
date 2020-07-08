@@ -10,14 +10,14 @@ class Inventory{
         unsigned short healthPotions = 2;
         unsigned short manaPotions = 2;
     public:
-        unsigned short getSize();
-        unsigned short getNumItems();
+        unsigned short getSize() const;
+        unsigned short getNumItems() const;
         void displayItems();
         unsigned short addItem(std::string item);
         unsigned short removeItem(std::string item);
         void addHP();
         void addMP();
-        unsigned short getHP();
-        unsigned short getMP();
-        unsigned short getMaxPotions();
+        unsigned short getHP() const;
+        unsigned short getMP() const;
+        unsigned short getMaxPotions() const;
 };

@@ -7,8 +7,8 @@
 class Player{
     private:
         std::string name;
-        Inventory *ptrInvy;
-        Class *ptrCls;
+        Inventory* ptrInvy;
+        Class* ptrCls;
         char classType[8];
         unsigned int health = 100;
         unsigned int mana = 100;
@@ -28,14 +28,14 @@ class Player{
         void setIntel(unsigned short correct);
         void setStats();
     public:
-        std::string getName();
-        const char* getClassType();
-        unsigned int getHealth();
-        unsigned int getMana();
-        unsigned short getLuck();
-        unsigned short getSpeed();
-        unsigned short getIntel();
-        unsigned short getWisdom();
-        unsigned short getStrength();
-        unsigned short getCharisma();
+        std::string getName() const;
+        const char* getClassType() const;
+        unsigned int getHealth() const;
+        unsigned int getMana() const;
+        unsigned short getLuck() const;
+        unsigned short getSpeed() const;
+        unsigned short getIntel() const;
+        unsigned short getWisdom() const;
+        unsigned short getStrength() const;
+        unsigned short getCharisma() const;
 };
