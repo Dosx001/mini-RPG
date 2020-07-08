@@ -3,6 +3,8 @@
 Menu::Menu(Player* Py, Inventory* Invy) :ptrPy(Py), ptrInvy(Invy) {}
 
 void Menu::quickMenu() {
+    std::cout << ptrPy -> getName() << " | HP: " << ptrPy -> getHealth()
+        << " | MP: " << ptrPy -> getMana() << std::endl;
     std::cout << "Full Menu | Inventory | Quit" << std::endl;
 }
 
