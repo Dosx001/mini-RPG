@@ -92,6 +92,10 @@ void Player::setIntel(unsigned short correct) {
     intel =+ correct;
 }
 
+void Player::setWisdom(unsigned short correct) {
+    wisdom =+ correct;
+}
+
 void Player::setStats() {
     Trials Trial;
     setLuck(Trial.luck());
@@ -100,6 +104,8 @@ void Player::setStats() {
     std::cout << "Your Speed stat is " << speed << std::endl;
     setIntel(Trial.intel());
     std::cout << "Your Intel stat is " << intel << std::endl;
+    setWisdom(Trial.wisdom());
+    std::cout << "Your Wisdom stat is " << wisdom << std::endl;
 }
 
 std::string Player::getName() const {

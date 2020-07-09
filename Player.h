@@ -26,6 +26,7 @@ class Player{
         void setLuck(unsigned short guesses);
         void setSpeed(unsigned short hits);
         void setIntel(unsigned short correct);
+        void setWisdom(unsigned short correct);
         void setStats();
     public:
         std::string getName() const;
