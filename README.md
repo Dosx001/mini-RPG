@@ -55,7 +55,7 @@ Concepts | Syntax
     * :white_check_mark: Luck
     * :white_check_mark: Speed
     * :white_check_mark: Intelligence
-    * :black_square_button: Wisdom
+    * :white_check_mark: Wisdom
     * :black_square_button: Strength
     * :black_square_button: Charisma
 * :white_check_mark: Quick menu to display actions
