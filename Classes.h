@@ -3,40 +3,35 @@
 
 struct Ptrs {
     public:
-        int *ptrSpd;
-        int *ptrLuk;
-        int *ptrInt;
-        int *ptrWid;
-        int *ptrStr;
-        int *ptrChr;
+        const unsigned short* ptrSpd;
+        const unsigned short* ptrLuk;
+        const unsigned short* ptrInt;
+        const unsigned short* ptrWid;
+        const unsigned short* ptrStr;
+        const unsigned short* ptrChr;
 };
 
 class Class {
     public:
         Ptrs stats;
-//        Class(Ptrs ptrsStats); 
-        virtual void test(); 
-        virtual int attack();
-        virtual int defense();
+        virtual unsigned int attack();
+        virtual unsigned int defense();
 };
 
 class Warrior: public Class {
     public:
-        void test();
-        int attack();
-        int defense();
+        unsigned int attack();
+        unsigned int defense();
 };
 
 class Hunter: public Class {
     public:
-        void test();
-        int attack();
-        int defense();
+        unsigned int attack();
+        unsigned int defense();
 };
 
 class Sorcerer: public Class {
     public:
-        void test();
-        int attack();
-        int defense();
+        unsigned int attack();
+        unsigned int defense();
 };

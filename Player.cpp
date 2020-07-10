@@ -1,7 +1,6 @@
 #include "Player.h"
 
-Player::Player(Inventory *Invy) {
-    ptrInvy = Invy;
+Player::Player(Inventory *Invy) :ptrInvy(Invy) {
     createName();
     std::cout << "Hello " << name << "!" << std::endl;
     setCls();
@@ -34,8 +33,8 @@ void Player::setCls() {
         std::cout << "Pick a class! Warrior | Hunter | Sorcerer" << std::endl;
         getline(std::cin, pick);
             if (pick == "Warrior") {
-                ptrInvy -> add_item("Rusty Sword");
-                ptrInvy -> add_item("Rusty Shield");
+                ptrInvy -> addItem("Rusty Sword");
+                ptrInvy -> addItem("Rusty Shield");
                 strength = 2;
                 charisma = 2;
                 std::cout << "Strength +2\nCharisma +2" << std::endl;
@@ -43,8 +42,8 @@ void Player::setCls() {
                 break;
             }
             if (pick == "Hunter") {
-                ptrInvy -> add_item("Wooden Bow");
-                ptrInvy -> add_item("Rusty Dagger");
+                ptrInvy -> addItem("Wooden Bow");
+                ptrInvy -> addItem("Rusty Dagger");
                 speed = 2;
                 luck = 2;
                 std::cout << "Speed +2\nLuck +2" << std::endl;
@@ -52,8 +51,8 @@ void Player::setCls() {
                 break;
             }
             if (pick == "Sorcerer") {
-                ptrInvy -> add_item("Wooden Wand");
-                ptrInvy -> add_item("Rusty Necklace");
+                ptrInvy -> addItem("Wooden Wand");
+                ptrInvy -> addItem("Rusty Necklace");
                 intel = 2;
                 wisdom = 2;
                 std::cout << "Intel +2\nWisdom +2" << std::endl;
@@ -70,10 +69,9 @@ void Player::setCls() {
     Stats.ptrStr = &strength;
     Stats.ptrChr = &charisma;
     ptrCls -> stats = Stats; 
-    ptrCls -> test();
 }
 
-void Player::setLuck(int guesses) {
+void Player::setLuck(unsigned short guesses) {
     switch(guesses) {
         case 2:
             luck =+ 10;
@@ -86,12 +84,16 @@ void Player::setLuck(int guesses) {
     }
 }
 
-void Player::setSpeed(int hits) {
+void Player::setSpeed(unsigned short hits) {
     speed =+ hits / 3;
 }
 
-void Player::setIntel(int correct) {
+void Player::setIntel(unsigned short correct) {
     intel =+ correct;
+}
+
+void Player::setWisdom(unsigned short correct) {
+    wisdom =+ correct;
 }
 
 void Player::setStats() {
@@ -102,44 +104,46 @@ void Player::setStats() {
     std::cout << "Your Speed stat is " << speed << std::endl;
     setIntel(Trial.intel());
     std::cout << "Your Intel stat is " << intel << std::endl;
+    setWisdom(Trial.wisdom());
+    std::cout << "Your Wisdom stat is " << wisdom << std::endl;
 }
 
-std::string Player::getName() {
+std::string Player::getName() const {
     return name;
 }
 
-const char* Player::getClassType() {
+const char* Player::getClassType() const {
     return classType;
 }
 
-int Player::getHealth() {
+unsigned int Player::getHealth() const {
     return health;
 }
 
-int Player::getMana() {
+unsigned int Player::getMana() const {
     return mana;
 }
 
-int Player::getLuck() {
+unsigned short Player::getLuck() const {
     return luck;
 }
 
-int Player::getSpeed() {
+unsigned short Player::getSpeed() const {
     return speed;
 }
 
-int Player::getIntel() {
+unsigned short Player::getIntel() const {
     return intel;
 }
 
-int Player::getWisdom() {
+unsigned short Player::getWisdom() const {
     return wisdom;
 }
 
-int Player::getStrength() {
+unsigned short Player::getStrength() const {
     return strength;
 }
 
-int Player::getCharisma() {
+unsigned short Player::getCharisma() const {
     return charisma;
 }

@@ -15,7 +15,7 @@ Concepts | Syntax
 :white_check_mark: Makefile | :white_check_mark: Functions
 :black_square_button: cmake | :white_check_mark: For Loop
 :white_check_mark: Pointers and references | :white_check_mark: While loop
-:black_square_button: Smart pointers | :white_check_mark: Classes:
+:black_square_button: Smart pointers | :white_check_mark: Classes
 :white_check_mark: header files | :white_check_mark: Constructors 
 :white_check_mark: precompiled header | :white_check_mark: Inheritance 
 :black_square_button: Namespace | :white_check_mark: Composition 
@@ -28,6 +28,7 @@ Concepts | Syntax
 :black_square_button: Move Semantics | 
 :black_square_button: Friend | 
 :white_check_mark: Struct |
+:white_check_mark: Initializer List |
 
 # Bugs 
 :white_check_mark: **Bug 1**
@@ -54,7 +55,7 @@ Concepts | Syntax
     * :white_check_mark: Luck
     * :white_check_mark: Speed
     * :white_check_mark: Intelligence
-    * :black_square_button: Wisdom
+    * :white_check_mark: Wisdom
     * :black_square_button: Strength
     * :black_square_button: Charisma
 * :white_check_mark: Quick menu to display actions

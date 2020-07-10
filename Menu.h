@@ -4,10 +4,10 @@
 
 class Menu{
     private:
-        Player *ptrPy;
-        Inventory *ptrInvy;
+        Player* ptrPy;
+        Inventory* ptrInvy;
     public:
-        Menu(Player *Py, Inventory *Invy);
+        Menu(Player* Py, Inventory* Invy);
         void quickMenu();
         void fullMenu();
 };

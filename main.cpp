@@ -4,9 +4,9 @@
 
 int main() {
     Inventory Invy;
-    Inventory *ptrInvy = &Invy;
+    Inventory* const ptrInvy = &Invy;
     Player Py(ptrInvy);
-    Player *ptrPy = &Py;
+    Player* const ptrPy = &Py;
     Menu Mu(ptrPy, ptrInvy);
     std::cin.ignore();
     std::string line(50, '_');
@@ -19,7 +19,7 @@ int main() {
             Mu.fullMenu();
         }
         if (input == "Inventory" || input == "Inve") {
-            Invy.display_items();
+            Invy.displayItems();
         }
         std::cout << std::endl;
     }

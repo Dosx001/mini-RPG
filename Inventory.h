@@ -3,22 +3,21 @@
 
 class Inventory{
     private:
-        int size = 10;
-        int num_items = 0;
+        unsigned short size = 10;
+        unsigned short numItems = 0;
         std::vector<std::string> items;
-        int maxPotions = 10;
-        int healthPotions = 2;
-        int manaPotions = 2;
+        unsigned short maxPotions = 10;
+        unsigned short healthPotions = 2;
+        unsigned short manaPotions = 2;
     public:
-        Inventory();
-        int get_size();
-        int get_num_items();
-        void display_items();
-        int add_item(std::string item);
-        int remove_item(std::string item);
+        unsigned short getSize() const;
+        unsigned short getNumItems() const;
+        void displayItems();
+        unsigned short addItem(std::string item);
+        unsigned short removeItem(std::string item);
         void addHP();
         void addMP();
-        int getHP();
-        int getMP();
-        int getMaxPotions();
+        unsigned short getHP() const;
+        unsigned short getMP() const;
+        unsigned short getMaxPotions() const;
 };
