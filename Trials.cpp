@@ -64,47 +64,30 @@ unsigned short Trials::intel() {
     int correct = 0;
     float check;
     while (time(0) < t + (short) 15) {
-        float num1 = rand() % 10;
-        float num2 = rand() % 10;
+        unsigned short num1 = rand() % 9 + 1;
+        unsigned short num2 = rand() % 9 + 1;
         char op = ops[rand() % 4];
         std::cout << "Whats's " << num1 << " " << op << " " << num2 << "?" << std::endl;
         std::cin >> ans;
         switch(op) {
             case '+':
                 check = num1 + num2;
-                if (ans == check) {
-                    std::cout << "Correct!" << std::endl;
-                    correct++;
-                    break;
-                }
-                std::cout << "Wrong. The answer is " << check << std::endl;
                 break;
             case '-':
                 check = num1 - num2;
-                if (ans == check) {
-                    std::cout << "Correct!" << std::endl;
-                    correct++;
-                    break;
-                }
-                std::cout << "Wrong. The answer is " << check << std::endl;
                 break;
             case '*':
                 check = num1 * num2;
-                if (ans == check) {
-                    std::cout << "Correct!" << std::endl;
-                    correct++;
-                    break;
-                }
-                std::cout << "Wrong. The answer is " << check << std::endl;
                 break;
             case '/':
                 check = num1 / num2;
-                if (ans == check) {
-                    std::cout << "Correct!" << std::endl;
-                    correct++;
-                    break;
-                }
-                std::cout << "Wrong. The answer is " << check << std::endl;
+                break;
+        }
+        if (ans == check) {
+            std::cout << "Correct!" << std::endl;
+            correct++;
+        } else {
+            std::cout << "Wrong. The answer is " << check << std::endl;
         }
     }
     return correct;
@@ -128,7 +111,8 @@ unsigned short Trials::wisdom() {
                 answer = R"([Tt]owel)";
                 break;
             case 2:
-                std::cout << "What never asks a question but gets answered all the time?" << std::endl;
+                std::cout << "What never asks a question but gets answered all the time?"
+                    << std::endl;
                 answer = R"([Pp]hone)";
                 break;
             case 3:
@@ -136,7 +120,8 @@ unsigned short Trials::wisdom() {
                 answer = R"([Aa]ge)";
                 break;
             case 4:
-                std::cout << "What starts with “e” and ends with “e” but only has one letter in it?" << std::endl;
+                std::cout << "What starts with “e” and ends with “e” but"
+                    "only has one letter in it?" << std::endl;
                 answer = R"([Ee]nvelope)";
                 break;
             case 5:
@@ -148,7 +133,8 @@ unsigned short Trials::wisdom() {
                 answer = R"([Cc]lock)";
                 break;
             case 7:
-                std::cout << "I start out tall, but the longer I stand, the shorter I grow. What am I?" << std::endl;
+                std::cout << "I start out tall, but the longer I stand, the shorter I grow."
+                    "What am I?" << std::endl;
                 answer = R"([Cc]andle)";
                 break;
             case 8:
@@ -156,39 +142,47 @@ unsigned short Trials::wisdom() {
                 answer = R"([Tt]welve|12)";
                 break;
             case 9:
-                std::cout << "Which weighs more, a pound of feathers or a pound of bricks?" << std::endl;
+                std::cout << "Which weighs more, a pound of feathers or a pound of bricks?"
+                    << std::endl;
                 answer = R"([Nn]either)";
                 break;
             case 10:
-                std::cout << "How can the pocket of your pants be empty, but still have something in it?" << std::endl;
+                std::cout << "How can the pocket of your pants be empty,"
+                    "but still have something in it?" << std::endl;
                 answer = R"([Hh]ole)";
                 break;
             case 11:
-                std::cout << "What has a thumb and four fingers but isn’t actually alive?" << std::endl;
+                std::cout << "What has a thumb and four fingers but isn’t actually alive?"
+                    << std::endl;
                 answer = R"([Gg]love(s)?)";
                 break;
             case 12:
-                std::cout << "Imagine you’re in a room that’s filling up with water quickly. There are no windows or doors. How do you get out?" << std::endl;
+                std::cout << "Imagine you’re in a room that’s filling up with water quickly."
+                    "There are no windows or doors. How do you get out?" << std::endl;
                 answer = R"([Ss]top imagining)";
                 break;
             case 13:
-                std::cout << "Everyone in the world needs it, but they usually give it without taking it. What is it?" << std::endl;
+                std::cout << "Everyone in the world needs it, but they usually give it without"
+                    "taking it. What is it?" << std::endl;
                 answer = R"([Aa]dvice)";
                 break;
             case 14:
                 std::cout << "What can you hold without touching it at all?" << std::endl;
-                answer = R"([Cc]onversationn)";
+                answer = R"([Cc]onversation)";
                 break;
             case 15:
-                std::cout << "I am an odd number. Take away one letter and I become even. What number am I??" << std::endl;
+                std::cout << "I am an odd number. Take away one letter and I become even."
+                    "What number am I??" << std::endl;
                 answer = R"([Ss]even)";
                 break;
             case 16:
-                std::cout << "I’m light as a feather, but not even the strongest girl can hold me for more than 5 minutes. What am I?I’m light as a feather, but not even the strongest girl can hold me for more than 5 minutes. What am I?" << std::endl;
+                std::cout << "I’m light as a feather, but not even the strongest person can hold"
+                    "me for more than 5 minutes. What am I?" << std::endl;
                 answer = R"([Bb]reath)";
                 break;
             case 17:
-                std::cout << "What 5-letter word becomes shorter when you add two letters to it?" << std::endl;
+                std::cout << "What 5-letter word becomes shorter when you add two letters to it?"
+                    << std::endl;
                 answer = R"([Ss]hort)";
                 break;
             case 18:
@@ -196,7 +190,8 @@ unsigned short Trials::wisdom() {
                 answer = R"([Bb]rain)";
                 break;
             case 19:
-                std::cout << "What belongs to you but gets used by everyone else more than you?" << std::endl;
+                std::cout << "What belongs to you but gets used by everyone else more than you?"
+                    << std::endl;
                 answer = R"([Nn]ame)";
                 break;
         }
