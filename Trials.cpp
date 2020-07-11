@@ -64,47 +64,30 @@ unsigned short Trials::intel() {
     int correct = 0;
     float check;
     while (time(0) < t + (short) 15) {
-        float num1 = rand() % 10;
-        float num2 = rand() % 10;
+        unsigned short num1 = rand() % 9 + 1;
+        unsigned short num2 = rand() % 9 + 1;
         char op = ops[rand() % 4];
         std::cout << "Whats's " << num1 << " " << op << " " << num2 << "?" << std::endl;
         std::cin >> ans;
         switch(op) {
             case '+':
                 check = num1 + num2;
-                if (ans == check) {
-                    std::cout << "Correct!" << std::endl;
-                    correct++;
-                    break;
-                }
-                std::cout << "Wrong. The answer is " << check << std::endl;
                 break;
             case '-':
                 check = num1 - num2;
-                if (ans == check) {
-                    std::cout << "Correct!" << std::endl;
-                    correct++;
-                    break;
-                }
-                std::cout << "Wrong. The answer is " << check << std::endl;
                 break;
             case '*':
                 check = num1 * num2;
-                if (ans == check) {
-                    std::cout << "Correct!" << std::endl;
-                    correct++;
-                    break;
-                }
-                std::cout << "Wrong. The answer is " << check << std::endl;
                 break;
             case '/':
                 check = num1 / num2;
-                if (ans == check) {
-                    std::cout << "Correct!" << std::endl;
-                    correct++;
-                    break;
-                }
-                std::cout << "Wrong. The answer is " << check << std::endl;
+                break;
+        }
+        if (ans == check) {
+            std::cout << "Correct!" << std::endl;
+            correct++;
+        } else {
+            std::cout << "Wrong. The answer is " << check << std::endl;
         }
     }
     return correct;

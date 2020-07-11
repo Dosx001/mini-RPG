@@ -21,7 +21,7 @@ Concepts | Syntax
 :black_square_button: Namespace | :white_check_mark: Composition 
 :black_square_button: Libraries | :black_square_button: Lambdas
 :white_check_mark: Stack vs Heap Memory | :black_square_button: Unions
-:black_square_button: Const | :black_square_button: sorting
+:white_check_mark: Const | :black_square_button: sorting
 :black_square_button: C/C++ casting | 
 :black_square_button: Access Specifiers: Protected | 
 :black_square_button: Lvalues and Rvalues | 
