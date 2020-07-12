@@ -1,31 +1,31 @@
-CXX = c++
-SRCS = $(wildcard *.cpp)
-OBJS = $(SRCS:%.cpp=%.o)
-FLAGS = -c -Wall
-EXE = mini_RPG.exe
-PY = Player.cpp Player.h 
-INVT = Inventory.cpp Inventory.h
-MU = Menu.cpp Menu.h
-TRL = Trials.cpp Trials.h 
-CLS = Classes.cpp Classes.h
+SRC_DIR := src
+OBJ_DIR := obj
+BIN_DIR := .
 
-link: $(OBJS)
-	$(CXX) $(OBJS) -o $(EXE)
+EXE := $(BIN_DIR)/mini_RPG.exe
+SRC := $(wildcard $(SRC_DIR)/*.cpp)
+OBJ := $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
-main.o: main.cpp $(PY) $(INVT) $(MU)
-	$(CXX) $(FLAGS) main.cpp
+CXX      := c++
+CPPFLAGS := -Iinclude -MMD -MP
+CFLAGS   := -Wall
+LDFLAGS  := -Llib
+LDLIBS   := -lm
 
-Player.o: $(PY) $(INVT) $(TRL) $(CLS) 
-	$(CXX) $(FLAGS) Player.cpp
+.PHONY: all clean
 
-Menu.o: $(MU) $(PY) $(INVT)
-	$(CXX) $(FLAGS) Menu.cpp
+all: $(EXE)
 
-Precompiled Header: pch.h
-	$(CXX) pch.h
+$(EXE): $(OBJ) | $(BIN_DIR)
+	    $(CXX) $(OBJ) -o $(EXE)
 
-%.o: %.cpp %.h
-	$(CXX) $(FLAGS) $*.cpp
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
+	    $(CXX) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+$(BIN_DIR) $(OBJ_DIR):
+	    mkdir -p $@
 
 clean:
-	rm *.o $(EXE)
+	    @$(RM) -rv $(BIN_DIR) $(OBJ_DIR)
+
+-include $(OBJ:.o=.d)
