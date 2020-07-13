@@ -1,10 +1,9 @@
 #!/usr/bin/expect
-set send_slow {1 .1}
-spawn ./mini_RPG.exe
+spawn bin/mini_RPG.exe
 expect "What is your name? "
-send -s "Andres Rodriguez\r"
+send "Andres Rodriguez\r"
 expect "Is your name Andres Rodriguez? (yes/no) "
-send -s "yes\r"
+send "yes\r"
 sleep .1
-send -s "Hunter\r"
+send "Hunter\r"
 interact
