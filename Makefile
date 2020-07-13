@@ -1,6 +1,6 @@
 SRC_DIR := src
 OBJ_DIR := obj
-BIN_DIR := .
+BIN_DIR := bin
 
 EXE := $(BIN_DIR)/mini_RPG.exe
 SRC := $(wildcard $(SRC_DIR)/*.cpp)
