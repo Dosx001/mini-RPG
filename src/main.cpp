@@ -14,14 +14,14 @@ int main() {
     while (input != "Quit") {
         Mu.quickMenu();
         getline(std::cin, input);
-        std::cout << line << std::endl;
+        std::cout << line << '\n';
         if (input == "Full Menu" || input == "Full") {
             Mu.fullMenu();
         }
         if (input == "Inventory" || input == "Inve") {
             Invy.displayItems();
         }
-        std::cout << std::endl;
+        std::cout << '\n';
     }
     return 0;
 }
