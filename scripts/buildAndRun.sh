@@ -1,3 +1,3 @@
 #!/bin/bash
 make
-expect script/run.exp
+expect scripts/run.exp
