@@ -1,9 +1,11 @@
 #include "Classes.hpp"
 
 unsigned int Class::attack() {
+    return 0;
 }
 
 unsigned int Class::defense() {
+    return 0;
 }
 
 unsigned int Warrior::attack() {

@@ -2,7 +2,7 @@
 
 Player::Player(Inventory *Invy) :ptrInvy(Invy) {
     createName();
-    std::cout << "Hello " << name << "!" << std::endl;
+    std::cout << "Hello " << name << "!\n";
     setCls();
     setStats();
 }
@@ -30,14 +30,14 @@ void Player::createName() {
 void Player::setCls() {
     std::string pick = "None";
     while (true) {
-        std::cout << "Pick a class! Warrior | Hunter | Sorcerer" << std::endl;
+        std::cout << "Pick a class! Warrior | Hunter | Sorcerer\n";
         getline(std::cin, pick);
             if (pick == "Warrior") {
                 ptrInvy -> addItem("Rusty Sword");
                 ptrInvy -> addItem("Rusty Shield");
                 strength = 2;
                 charisma = 2;
-                std::cout << "Strength +2\nCharisma +2" << std::endl;
+                std::cout << "Strength +2\nCharisma +2\n";
                 ptrCls = new Warrior;
                 break;
             }
@@ -46,7 +46,7 @@ void Player::setCls() {
                 ptrInvy -> addItem("Rusty Dagger");
                 speed = 2;
                 luck = 2;
-                std::cout << "Speed +2\nLuck +2" << std::endl;
+                std::cout << "Speed +2\nLuck +2\n";
                 ptrCls = new Hunter;
                 break;
             }
@@ -55,7 +55,7 @@ void Player::setCls() {
                 ptrInvy -> addItem("Rusty Necklace");
                 intel = 2;
                 wisdom = 2;
-                std::cout << "Intel +2\nWisdom +2" << std::endl;
+                std::cout << "Intel +2\nWisdom +2\n";
                 ptrCls = new Sorcerer;
                 break;
             }
@@ -99,13 +99,13 @@ void Player::setWisdom(unsigned short correct) {
 void Player::setStats() {
     Trials Trial;
     setLuck(Trial.luck());
-    std::cout << "Your Luck stat is " << luck << std::endl;
+    std::cout << "Your Luck stat is " << luck << '\n';
     setSpeed(Trial.speed());
-    std::cout << "Your Speed stat is " << speed << std::endl;
+    std::cout << "Your Speed stat is " << speed << '\n';
     setIntel(Trial.intel());
-    std::cout << "Your Intel stat is " << intel << std::endl;
+    std::cout << "Your Intel stat is " << intel << '\n';
     setWisdom(Trial.wisdom());
-    std::cout << "Your Wisdom stat is " << wisdom << std::endl;
+    std::cout << "Your Wisdom stat is " << wisdom << '\n';
 }
 
 std::string Player::getName() const {
