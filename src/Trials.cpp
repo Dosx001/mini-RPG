@@ -36,7 +36,6 @@ unsigned short Trials::luck() {
     std::cout << "Pick a number between 1 and 10: \n";
     while (0 < guesses) {
         std::cin >> guess;
-        guesses--;
         if (guess == num) {
             std::cout << "The number is " << num << "!" <<'\n';
             break;
@@ -46,6 +45,7 @@ unsigned short Trials::luck() {
         } else {
             std::cout << "The number is smaller\n";
         }
+        guesses--;
         if (0 < guesses) {
         std::cout << guesses << " more guesses. Try again!\n";
         }

@@ -73,11 +73,14 @@ void Player::setCls() {
 
 void Player::setLuck(unsigned short guesses) {
     switch(guesses) {
-        case 2:
+        case 3:
             luck =+ 10;
             break;
+        case 2:
+            luck =+ 7;
+            break;
         case 1:
-            luck =+ 5;
+            luck =+ 4;
             break;
         case 0:
             luck =+ 1;
