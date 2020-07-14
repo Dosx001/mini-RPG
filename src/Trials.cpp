@@ -1,10 +1,13 @@
 #include "Trials.hpp"
 
 unsigned short Trials::speed() {
-    long t = time(0);
     char hit;
     int hits = 0;
-    std::cout << "Press any key and Enter to hit.";
+    std::cout << "Your Speed Trial will now begin. ";
+    std::cin.ignore();
+    std::cout << "Press any key and Enter to hit as times you can, under a time limit. ";
+    std::cin.ignore();
+    long t = time(0);
     while (time(0) < t + (short) 5) {
         std::cout << "hit\n";
         std::cin >> hit;
@@ -12,26 +15,27 @@ unsigned short Trials::speed() {
     }
     std::cout << "Stop!!!\a\n";
     std::cout << "Calculating...\n";
-    sleep(5);
     t = time(0);
     while (time(0) < t + (short) 3) {
+        std::cout << t << '\n';
         std::cin.ignore();
     }
-    std::cout << "Number of hits: \a" << hits << '\n';
-    //std::cin >> hit;
-    //std::cout << hit << '\n';
+    std::cout << t << '\n';
+    std::cout << "Number of hits: \a" << hits;
+    std::cin.ignore();
     return hits;
 }
 
 unsigned short Trials::luck() {
-    short num;
     short guess;
-    std::cout << "Pick a number between 1 and 10: \n";
-    std::cin >> guess;
-    srand(time(0));
-    num = rand() % 9 + 1;
     short guesses = 3;
-    while (1 < guesses) {
+    srand(time(0));
+    short num = rand() % 9 + 1;
+    std::cout << "Your Luck Trial will now begin. ";
+    std::cin.ignore();
+    std::cout << "Pick a number between 1 and 10: \n";
+    while (0 < guesses) {
+        std::cin >> guess;
         guesses--;
         if (guess == num) {
             std::cout << "The number is " << num << "!" <<'\n';
@@ -43,9 +47,8 @@ unsigned short Trials::luck() {
             std::cout << "The number is smaller\n";
         }
         if (0 < guesses) {
-        std::cout << guesses << " more guesses. Try again!\n\n";
+        std::cout << guesses << " more guesses. Try again!\n";
         }
-        std::cin >> guess;
     }
     if (guess != num) {
         std::cout << "Game Over\a\n";
@@ -60,12 +63,16 @@ unsigned short Trials::intel() {
     char ops [4] = {'+','-','*','/'};
     float ans;
     srand(time(0));
-    long t = time(0);
     int correct = 0;
     float check;
+    std::cout << "Your Intel Trial will now begin. ";
+    std::cin.ignore();
+    std::cout << "Answer as many basic math poblems you can, under a time limit. ";
+    std::cin.ignore();
+    long t = time(0);
     while (time(0) < t + (short) 15) {
-        unsigned short num1 = rand() % 9 + 1;
-        unsigned short num2 = rand() % 9 + 1;
+        float num1 = rand() % 9 + 1;
+        float num2 = rand() % 9 + 1;
         char op = ops[rand() % 4];
         std::cout << "Whats's " << num1 << " " << op << " " << num2 << "?\n";
         std::cin >> ans;
@@ -98,9 +105,10 @@ unsigned short Trials::wisdom() {
     std::string input;
     unsigned short correct = 0;
     srand(time(0));
-    int question;
+    std::cout << "Your Wisdom Trial will now begin. ";
+    std::cin.ignore();
     for (int i = 0; i < 4; i++) {
-        question = rand() % 20;
+        int question = rand() % 20;
         switch(question) {
             case 0:
                 std::cout << "What do you never eat for breakfast?\n";
@@ -111,7 +119,7 @@ unsigned short Trials::wisdom() {
                 answer = R"([Tt]owel)";
                 break;
             case 2:
-                std::cout << "What never asks a question but gets answered all the time?\n"
+                std::cout << "What never asks a question but gets answered all the time?\n";
                 answer = R"([Pp]hone)";
                 break;
             case 3:
@@ -141,7 +149,7 @@ unsigned short Trials::wisdom() {
                 answer = R"([Tt]welve|12)";
                 break;
             case 9:
-                std::cout << "Which weighs more, a pound of feathers or a pound of bricks?\n"
+                std::cout << "Which weighs more, a pound of feathers or a pound of bricks?\n";
                 answer = R"([Nn]either)";
                 break;
             case 10:
@@ -150,7 +158,7 @@ unsigned short Trials::wisdom() {
                 answer = R"([Hh]ole)";
                 break;
             case 11:
-                std::cout << "What has a thumb and four fingers but isn’t actually alive?\n"
+                std::cout << "What has a thumb and four fingers but isn’t actually alive?\n";
                 answer = R"([Gg]love(s)?)";
                 break;
             case 12:
@@ -160,7 +168,7 @@ unsigned short Trials::wisdom() {
                 break;
             case 13:
                 std::cout << "Everyone in the world needs it, but they usually give it without"
-                    "taking it. What is it?\n";
+                    "taking it.\nWhat is it?\n";
                 answer = R"([Aa]dvice)";
                 break;
             case 14:
@@ -174,11 +182,12 @@ unsigned short Trials::wisdom() {
                 break;
             case 16:
                 std::cout << "I’m light as a feather, but not even the strongest person can hold"
-                    "me for more than 5 minutes. What am I?\n";
+                    "me for more than 5 minutes.\nWhat am I?\n";
                 answer = R"([Bb]reath)";
                 break;
             case 17:
-                std::cout << "What 5-letter word becomes shorter when you add two letters to it?\n"
+                std::cout << "What 5-letter word becomes shorter"
+                   " when you add two letters to it?\n";
                 answer = R"([Ss]hort)";
                 break;
             case 18:
@@ -186,7 +195,7 @@ unsigned short Trials::wisdom() {
                 answer = R"([Bb]rain)";
                 break;
             case 19:
-                std::cout << "What belongs to you but gets used by everyone else more than you?\n"
+                std::cout << "What belongs to you but gets used by everyone else more than you?\n";
                 answer = R"([Nn]ame)";
                 break;
         }

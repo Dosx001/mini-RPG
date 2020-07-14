@@ -2,7 +2,6 @@
 
 Player::Player(Inventory *Invy) :ptrInvy(Invy) {
     createName();
-    std::cout << "Hello " << name << "!\n";
     setCls();
     setStats();
 }
@@ -25,6 +24,7 @@ void Player::createName() {
         }
     }
     name = new_name;
+    std::cout << "Hello " << name << "!\n";
 }
 
 void Player::setCls() {
@@ -97,15 +97,23 @@ void Player::setWisdom(unsigned short correct) {
 }
 
 void Player::setStats() {
+    std::cout << "You will now begin a set of trials. ";
+    std::cin.ignore();
     Trials Trial;
     setLuck(Trial.luck());
-    std::cout << "Your Luck stat is " << luck << '\n';
+    std::cout << "Your Luck stat is " << luck;
+    std::cin.ignore();
+    std::cin.ignore();
     setSpeed(Trial.speed());
-    std::cout << "Your Speed stat is " << speed << '\n';
+    std::cout << "Your Speed stat is " << speed;
+    std::cin.ignore();
     setIntel(Trial.intel());
-    std::cout << "Your Intel stat is " << intel << '\n';
+    std::cout << "Your Intel stat is " << intel;
+    std::cin.ignore();
+    std::cin.ignore();
     setWisdom(Trial.wisdom());
-    std::cout << "Your Wisdom stat is " << wisdom << '\n';
+    std::cout << "Your Wisdom stat is " << wisdom;
+    std::cin.ignore();
 }
 
 std::string Player::getName() const {
