@@ -6,3 +6,6 @@
 *.a
 CMakeFiles/
 Makefile
+*.html
+*.png
+*.css
