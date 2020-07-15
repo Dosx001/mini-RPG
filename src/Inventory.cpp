@@ -64,7 +64,7 @@ void Inventory::addMP() {
     if (manaPotions == maxPotions) {
         std::cout << "At max capacity\n";
     } else {
-        healthPotions++;
+        manaPotions++;
     }
 }
 
