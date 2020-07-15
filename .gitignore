@@ -1,4 +1,8 @@
 *.exe
 *.o
 *.hpp.gch
-obj/
+*.txt
+*.cmake
+*.a
+CMakeFiles/
+Makefile
