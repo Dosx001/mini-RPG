@@ -25,10 +25,12 @@ Initializer List |
 # Bugs 
 :white_check_mark: **Bug 1**
 * Quick menu printing twice inside the while loop on the first loop.
+
 ![Bug 1](https://i.imgur.com/AjFiy5S.png)
 
 :white_check_mark: **Bug 2**
 * "What is your name? " printing multiple times.
+
 ![Bug 2](https://i.imgur.com/YrTU1St.png)
 
 :white_check_mark: **Bug 3**
@@ -38,6 +40,7 @@ Initializer List |
 
 :black_square_button: **Bug 4**
 * Overloads when wrong data type is enter.
+
 ![Bug 3](https://i.imgur.com/lvPDtcc.png?1)
 
 
