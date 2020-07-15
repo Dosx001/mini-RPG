@@ -1,6 +1,6 @@
 #include "Trials.hpp"
 
-unsigned short Trials::speed() {
+short Trials::speed() {
     char hit;
     int hits = 0;
     std::cout << "Your Speed Trial will now begin. ";
@@ -26,7 +26,7 @@ unsigned short Trials::speed() {
     return hits;
 }
 
-unsigned short Trials::luck() {
+short Trials::luck() {
     short guess;
     short guesses = 3;
     srand(time(0));
@@ -59,7 +59,7 @@ unsigned short Trials::luck() {
     }
 }
 
-unsigned short Trials::intel() {
+short Trials::intel() {
     char ops [4] = {'+','-','*','/'};
     float ans;
     srand(time(0));
@@ -100,10 +100,10 @@ unsigned short Trials::intel() {
     return correct;
 }
 
-unsigned short Trials::wisdom() {
+short Trials::wisdom() {
     std::string answer;
     std::string input;
-    unsigned short correct = 0;
+    short correct = 0;
     srand(time(0));
     std::cout << "Your Wisdom Trial will now begin. ";
     std::cin.ignore();

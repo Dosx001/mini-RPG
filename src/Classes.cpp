@@ -1,33 +1,33 @@
 #include "Classes.hpp"
 
-unsigned int Class::attack() {
+int Class::attack() {
     return 0;
 }
 
-unsigned int Class::defense() {
+int Class::defense() {
     return 0;
 }
 
-unsigned int Warrior::attack() {
+int Warrior::attack() {
     return 10 + *stats.ptrStr * .5;
 }
 
-unsigned int Warrior::defense() {
+int Warrior::defense() {
     return 10 + *stats.ptrChr * .5;
 }
 
-unsigned int Hunter::attack() {
+int Hunter::attack() {
     return 10 + *stats.ptrSpd * .5;
 }
 
-unsigned int Hunter::defense() {
+int Hunter::defense() {
     return 10 + *stats.ptrLuk * .5;
 }
 
-unsigned int Sorcerer::attack() {
+int Sorcerer::attack() {
     return 10 + *stats.ptrInt * .5;
 }
 
-unsigned int Sorcerer::defense() {
+int Sorcerer::defense() {
     return 10 + *stats.ptrWid * .5;
 }

@@ -3,10 +3,10 @@
 
 class Trials{
     public:
-        unsigned short speed();
-        unsigned short luck();
-        unsigned short intel();
-        unsigned short wisdom();
+        short speed();
+        short luck();
+        short intel();
+        short wisdom();
     private:
         int findMatch(std::string str, std::string reg);
 };
