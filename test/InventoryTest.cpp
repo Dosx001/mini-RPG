@@ -12,15 +12,18 @@ class Fixture: public testing::Test {
         }
 };
 
-TEST_F(Fixture, getNumItems_Test) {
-    ASSERT_EQ(Invy -> getSize(), 10);
+TEST_F(Fixture, addItems_removeItems_Test) {
     ASSERT_EQ(Invy -> getNumItems(), 0);
-    for (int i = 0; i < 5; i++) {
+    ASSERT_TRUE(Invy -> addItem("item"));
+    ASSERT_EQ(Invy -> getNumItems(), 1);
+    for (int i = 0; i < 9; i++) {
         Invy -> addItem("item");
     }
-    ASSERT_EQ(Invy -> getNumItems(), 5);
+    ASSERT_FALSE(Invy -> addItem("item"));
+    ASSERT_EQ(Invy -> getNumItems(), Invy -> getSize());
     Invy -> removeItem("item");
-    ASSERT_EQ(Invy -> getNumItems(), 5); //FIX BUG
+    ASSERT_EQ(Invy -> getNumItems(), 9);
+    ASSERT_FALSE(Invy -> removeItem("stuff"));
 }
 
 TEST_F(Fixture, getHP_Test) {
