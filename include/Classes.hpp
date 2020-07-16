@@ -1,37 +1,36 @@
 #pragma once
 #include "pch.hpp"
 
-struct Ptrs {
+class PlayerClass {
     public:
-        const short* ptrSpd;
-        const short* ptrLuk;
-        const short* ptrInt;
-        const short* ptrWid;
-        const short* ptrStr;
-        const short* ptrChr;
-};
-
-class Class {
-    public:
-        Ptrs stats;
+        short& speed;
+        short& luck;
+        short& intel;
+        short& wisdom;
+        short& strength;
+        short& charisma;
+        PlayerClass(short& Spd, short& Luk, short& Int, short& Wid, short& Str, short& Chr);
         virtual int attack();
         virtual int defense();
 };
 
-class Warrior: public Class {
+class Warrior: public PlayerClass {
     public:
+        using PlayerClass::PlayerClass;
         int attack();
         int defense();
 };
 
-class Hunter: public Class {
+class Hunter: public PlayerClass {
     public:
+        using PlayerClass::PlayerClass;
         int attack();
         int defense();
 };
 
-class Sorcerer: public Class {
+class Sorcerer: public PlayerClass {
     public:
+        using PlayerClass::PlayerClass;
         int attack();
         int defense();
 };
