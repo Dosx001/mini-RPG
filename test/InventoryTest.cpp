@@ -33,6 +33,16 @@ TEST_F(Fixture, getHP_Test) {
     ASSERT_EQ(Invy -> getHP(), 10);
 }
 
+TEST_F(Fixture, getMP_Test) {
+    ASSERT_EQ(Invy -> getMP(), 2);
+    Invy -> addMP();
+    ASSERT_EQ(Invy -> getMP(), 3);
+    for (int i = 0; i < 8; i++) {
+        Invy -> addMP();
+    }
+    ASSERT_EQ(Invy -> getMP(), 10);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest();
     return RUN_ALL_TESTS();
