@@ -38,7 +38,7 @@ void Player::setCls() {
                 strength = 2;
                 charisma = 2;
                 std::cout << "Strength +2\nCharisma +2\n";
-                ptrCls = new Warrior;
+                ptrCls = new Warrior(speed, luck, intel, wisdom, strength, charisma);
                 break;
             }
             if (pick == "Hunter") {
@@ -47,7 +47,7 @@ void Player::setCls() {
                 speed = 2;
                 luck = 2;
                 std::cout << "Speed +2\nLuck +2\n";
-                ptrCls = new Hunter;
+                ptrCls = new Hunter(speed, luck, intel, wisdom, strength, charisma);
                 break;
             }
             if (pick == "Sorcerer") {
@@ -56,19 +56,11 @@ void Player::setCls() {
                 intel = 2;
                 wisdom = 2;
                 std::cout << "Intel +2\nWisdom +2\n";
-                ptrCls = new Sorcerer;
+                ptrCls = new Sorcerer(speed, luck, intel, wisdom, strength, charisma);
                 break;
             }
     }
     pick.copy(classType, pick.size() + 1);
-    Ptrs Stats;
-    Stats.ptrSpd = &speed;
-    Stats.ptrLuk = &luck;
-    Stats.ptrInt = &intel;
-    Stats.ptrWid = &wisdom;
-    Stats.ptrStr = &strength;
-    Stats.ptrChr = &charisma;
-    ptrCls -> stats = Stats;
 }
 
 void Player::setLuck(short guesses) {

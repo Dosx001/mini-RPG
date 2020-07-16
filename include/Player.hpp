@@ -8,7 +8,7 @@ class Player{
     private:
         std::string name;
         Inventory* ptrInvy;
-        Class* ptrCls;
+        PlayerClass* ptrCls;
         char classType[8];
         int health = 100;
         int mana = 100;
