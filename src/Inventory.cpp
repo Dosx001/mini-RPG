@@ -44,6 +44,7 @@ bool Inventory::removeItem(std::string item) {
     for (short i = 0; i < numItems; i++) {
         if (item == items[i]){
             items.erase(items.begin() + i);
+            --numItems;
             std::cout << item << " has been removed.\n";
             return true;
         }
