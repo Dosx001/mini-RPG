@@ -205,7 +205,7 @@ short Trials::wisdom() {
     return correct;
 }
 
-int Trials::findMatch(std::string input, std::string answer) {
+int Trials::findMatch(std::string& input, std::string& answer) {
     std::string str (input);
     std::regex reg (answer);
     std::smatch mat;

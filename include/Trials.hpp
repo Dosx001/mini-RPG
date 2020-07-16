@@ -8,7 +8,7 @@ class Trials{
         short intel();
         short wisdom();
     private:
-        int findMatch(std::string str, std::string reg);
+        int findMatch(std::string& str, std::string& reg);
 };
 
 void sleep(short time);
