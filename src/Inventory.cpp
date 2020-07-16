@@ -29,27 +29,27 @@ void Inventory::displayItems() {
     }
 }
 
-short Inventory::addItem(std::string item) {
+bool Inventory::addItem(std::string item) {
     if (numItems == size) {
         std::cout << "Inventory is full!\n";
-        return 0;
+        return false;
     }
     ++numItems;
     items.push_back(item);
     std::cout << items.at(numItems-1) << " has been added to your inventory!\n";
-    return 1;
+    return true;
 }
 
-short Inventory::removeItem(std::string item) {
+bool Inventory::removeItem(std::string item) {
     for (short i = 0; i < numItems; i++) {
         if (item == items[i]){
             items.erase(items.begin() + i);
             std::cout << item << " has been removed.\n";
-            return 1;
+            return true;
         }
     }
     std::cout << item << " not in Inventory.\n";
-    return 0;
+    return false;
 }
 
 void Inventory::addHP() {

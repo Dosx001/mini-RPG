@@ -13,8 +13,8 @@ class Inventory{
         short getSize() const;
         short getNumItems() const;
         void displayItems();
-        short addItem(std::string item);
-        short removeItem(std::string item);
+        bool addItem(std::string item);
+        bool removeItem(std::string item);
         void addHP();
         void addMP();
         short getHP() const;
