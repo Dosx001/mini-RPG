@@ -30,7 +30,7 @@ TEST_F(Fixture, getHP_Test) {
     for (int i = 0; i < 8; i++) {
         Invy -> addHP();
     }
-    ASSERT_EQ(Invy -> getHP(), 10);
+    ASSERT_EQ(Invy -> getHP(), Invy -> getMaxPotions());
 }
 
 TEST_F(Fixture, getMP_Test) {
@@ -40,7 +40,7 @@ TEST_F(Fixture, getMP_Test) {
     for (int i = 0; i < 8; i++) {
         Invy -> addMP();
     }
-    ASSERT_EQ(Invy -> getMP(), 10);
+    ASSERT_EQ(Invy -> getMP(), Invy -> getMaxPotions());
 }
 
 int main(int argc, char **argv) {
