@@ -23,14 +23,14 @@ TEST_F(Fixture, getNumItems_Test) {
     ASSERT_EQ(Invy -> getNumItems(), 5); //FIX BUG
 }
 
-TEST_F(Fixture, getHP_getMP_Test) {
+TEST_F(Fixture, getHP_Test) {
     ASSERT_EQ(Invy -> getHP(), 2);
     Invy -> addHP();
     ASSERT_EQ(Invy -> getHP(), 3);
-    for (int i = 0; i < 5; i++) {
-        Invy -> addMP();
+    for (int i = 0; i < 8; i++) {
+        Invy -> addHP();
     }
-    ASSERT_EQ(Invy -> getMP(), 7);
+    ASSERT_EQ(Invy -> getHP(), 10);
 }
 
 int main(int argc, char **argv) {
