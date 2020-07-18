@@ -36,3 +36,7 @@ target_link_libraries(mini_RPG.exe lib)
 add_executable(InventoryTest.exe test/InventoryTest.cpp)
 target_precompile_headers(InventoryTest.exe REUSE_FROM mini_RPG.exe)
 target_link_libraries(InventoryTest.exe lib ${GTEST_LIBRARIES} pthread)
+
+add_executable(EnemyTest.exe test/EnemyTest.cpp)
+target_precompile_headers(EnemyTest.exe REUSE_FROM mini_RPG.exe)
+target_link_libraries(EnemyTest.exe lib ${GTEST_LIBRARIES} pthread)
