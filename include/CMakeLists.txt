@@ -5,11 +5,15 @@ add_library(
     ../src/Trials.cpp
     ../src/Menu.cpp
     ../src/Classes.cpp
+    ../src/Enemy.cpp
+    ../src/Battle.cpp
     Player.hpp
     Inventory.hpp
     Trials.hpp
     Menu.hpp
     Classes.hpp
+    Enemy.hpp
+    Battle.hpp
     )
 
 target_include_directories(lib PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
