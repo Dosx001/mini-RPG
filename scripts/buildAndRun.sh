@@ -1,3 +1,3 @@
 #!/bin/bash
-make
+make mini_RPG.exe
 expect scripts/run.exp
