@@ -1,11 +1,33 @@
 #!/bin/bash
 root=`pwd`
 rm -rf coverage
-rm CMakeFiles/lib.dir/src/$1.gcda
-make $1Test.exe
-./bin/$1Test.exe
+
+if [ $1 == 'all' ]
+then
+    files=('Inventory' 'Enemy')
+elif [ $1 == 'I' ]
+then
+    files=('Inventory')
+elif [ $1 == 'E' ]
+then
+    files=('Enemy')
+fi
+
+for file in ${files[@]}
+do
+    rm -f CMakeFiles/lib.dir/src/${file}.gcda
+    make ${file}Test.exe
+    ./bin/${file}Test.exe
+done
+
 cd CMakeFiles/lib.dir/src
-gcov $1.gcno
-lcov --capture --directory . --output-file $1.info
-genhtml $1.info --output-directory coverage
+
+for file in ${files[@]}
+
+do
+    gcov ${file}.gcno
+done
+
+lcov --capture --directory . --output-file coverage.info
+genhtml coverage.info --output-directory coverage
 mv coverage ${root}
