@@ -1,6 +1,8 @@
 #include "Player.hpp"
 #include "Inventory.hpp"
 #include "Menu.hpp"
+#include "Enemy.hpp"
+#include "Battle.hpp"
 
 int main() {
     Inventory Invy;
@@ -22,6 +24,8 @@ int main() {
             Invy.displayItems();
         }
         std::cout << '\n';
+        Enemy Ey;
+        Battle Ba(Py, Ey);
     }
     return 0;
 }
