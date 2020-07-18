@@ -10,7 +10,7 @@ class Enemy {
         std::string getName();
         int getHealth();
         int attack();
-        void block(int& damage);
+        bool block(int& damage);
         bool takeDamage(int& damage);
         void display();
 };

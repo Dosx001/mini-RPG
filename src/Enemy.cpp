@@ -12,14 +12,16 @@ int Enemy::attack() {
     return 10;
 }
 
-void Enemy::block(int& damage) {
+bool Enemy::block(int& damage) {
     srand(time(0));
     if (rand() % 100 + 1 <= 40) {
         damage -= rand() % 10 + 1;
         if (damage < 0) {
             damage = 0;
         }
+        return true;
     }
+    return false;
 }
 
 bool Enemy::takeDamage(int& damage) {
