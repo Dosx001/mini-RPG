@@ -12,8 +12,8 @@ Concepts Learned | In Progess | Syntax Learned | In Progess
 --- | --- | --- | ---
 Switch | Static | Varibles | Lambdas
 Array and vector | Smart pointers | Logical Operators | Sorting
-Makefile | Namespace | If statements
-cmake | Libraries | Functions
+Makefile | Namespace | If statements | List Comprehension
+cmake | Libraries | Functions | Conditional Expression
 Pointers and references | C/C++ casting | For Loop
 header files | Friend | While loop
 precompiled header | Access Specifiers: Protected| Class
@@ -59,10 +59,10 @@ Initializer List |
 * :black_square_button: Actions class? e.g. attack, heal, move
 * :black_square_button: Map
 * :black_square_button: Levels
-* :black_square_button: Enemies
+* :white_check_mark: Enemies
 * :black_square_button: Leveling system
 * :white_check_mark: Classes e.g. Warrior, Sorcerer, Hunter
     * :black_square_button: subclass?
 * :black_square_button: Equipment
-* :black_square_button: Turn based battle system?
+* :white_check_mark: Turn based battle system?
 * :black_square_button: Installation file
