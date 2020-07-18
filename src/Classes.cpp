@@ -7,30 +7,38 @@ int PlayerClass::attack() {
     return 0;
 }
 
-int PlayerClass::defense() {
-    return 0;
+void PlayerClass::block(int& damage) {
 }
 
 int Warrior::attack() {
     return 10 + strength * .5;
 }
 
-int Warrior::defense() {
-    return 10 + charisma * .5;
+void Warrior::block(int& damage) {
+    damage -= 10 + charisma * .5;
+    if (damage < 0) {
+        damage = 0;
+    }
 }
 
 int Hunter::attack() {
     return 10 + speed * .5;
 }
 
-int Hunter::defense() {
-    return 10 + luck * .5;
+void Hunter::block(int& damage) {
+    damage -= 10 + luck * .5;
+    if (damage < 0) {
+        damage = 0;
+    }
 }
 
 int Sorcerer::attack() {
     return 10 + intel * .5;
 }
 
-int Sorcerer::defense() {
-    return 10 + wisdom * .5;
+void Sorcerer::block(int& damage) {
+    damage -= 10 + wisdom * .5;
+    if (damage < 0) {
+        damage = 0;
+    }
 }

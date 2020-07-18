@@ -3,7 +3,7 @@
 Player::Player(Inventory *Invy) :ptrInvy(Invy) {
     createName();
     setCls();
-    setStats();
+    //setStats()
 }
 
 void Player::createName() {
@@ -149,4 +149,18 @@ short Player::getStrength() const {
 
 short Player::getCharisma() const {
     return charisma;
+}
+
+PlayerClass* Player::getPtrCls() {
+    return ptrCls;
+}
+
+bool Player::takeDamage(int& damage) {
+    if (0 < damage) {
+        health -= damage;
+    }
+    if (health <= 0) {
+        return false;
+    }
+    return true;
 }

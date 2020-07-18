@@ -11,26 +11,26 @@ class PlayerClass {
         short& charisma;
         PlayerClass(short& Spd, short& Luk, short& Int, short& Wid, short& Str, short& Chr);
         virtual int attack();
-        virtual int defense();
+        virtual void block(int& damage);
 };
 
 class Warrior: public PlayerClass {
     public:
         using PlayerClass::PlayerClass;
         int attack();
-        int defense();
+        void block(int& damage);
 };
 
 class Hunter: public PlayerClass {
     public:
         using PlayerClass::PlayerClass;
         int attack();
-        int defense();
+        void block(int& damage);
 };
 
 class Sorcerer: public PlayerClass {
     public:
         using PlayerClass::PlayerClass;
         int attack();
-        int defense();
+        void block(int& damage);
 };

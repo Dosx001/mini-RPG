@@ -39,4 +39,6 @@ class Player{
         short getWisdom() const;
         short getStrength() const;
         short getCharisma() const;
+        PlayerClass* getPtrCls();
+        bool takeDamage(int& damage);
 };
