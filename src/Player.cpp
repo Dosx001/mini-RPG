@@ -88,7 +88,22 @@ void Player::setIntel(Trials& Trial) {
 }
 
 void Player::setWisdom(Trials& Trial) {
-    wisdom =+ Trial.wisdom();
+    switch(Trial.wisdom()) {
+        case 4:
+            wisdom =+ 10;
+            break;
+        case 3:
+            wisdom =+ 7;
+            break;
+        case 2:
+            wisdom =+ 5;
+            break;
+        case 1:
+            wisdom =+ 3;
+            break;
+        case 0:
+            wisdom =+ 1;
+    }
 }
 
 void Player::setStats() {
