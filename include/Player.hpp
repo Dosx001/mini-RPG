@@ -23,10 +23,10 @@ class Player{
     private:
         void createName();
         void setCls();
-        void setLuck(short guesses);
-        void setSpeed(short hits);
-        void setIntel(short correct);
-        void setWisdom(short correct);
+        void setLuck(Trials& Trial);
+        void setSpeed(Trials& Trial);
+        void setIntel(Trials& Trial);
+        void setWisdom(Trials& Trial);
         void setStats();
     public:
         std::string getName() const;

@@ -3,7 +3,7 @@
 Player::Player(Inventory *Invy) :ptrInvy(Invy) {
     createName();
     setCls();
-    //setStats()
+    setStats();
 }
 
 void Player::createName() {
@@ -63,8 +63,8 @@ void Player::setCls() {
     pick.copy(classType, pick.size() + 1);
 }
 
-void Player::setLuck(short guesses) {
-    switch(guesses) {
+void Player::setLuck(Trials& Trial) {
+    switch(Trial.luck()) {
         case 3:
             luck =+ 10;
             break;
@@ -79,34 +79,34 @@ void Player::setLuck(short guesses) {
     }
 }
 
-void Player::setSpeed(short hits) {
-    speed =+ hits / 3;
+void Player::setSpeed(Trials& Trial) {
+    speed =+ Trial.speed() / 3;
 }
 
-void Player::setIntel(short correct) {
-    intel =+ correct;
+void Player::setIntel(Trials& Trial) {
+    intel =+ Trial.intel();
 }
 
-void Player::setWisdom(short correct) {
-    wisdom =+ correct;
+void Player::setWisdom(Trials& Trial) {
+    wisdom =+ Trial.wisdom();
 }
 
 void Player::setStats() {
     std::cout << "You will now begin a set of trials. ";
     std::cin.ignore();
     Trials Trial;
-    setLuck(Trial.luck());
+    setLuck(Trial);
     std::cout << "Your Luck stat is " << luck;
     std::cin.ignore();
     std::cin.ignore();
-    setSpeed(Trial.speed());
+    setSpeed(Trial);
     std::cout << "Your Speed stat is " << speed;
     std::cin.ignore();
-    setIntel(Trial.intel());
+    setIntel(Trial);
     std::cout << "Your Intel stat is " << intel;
     std::cin.ignore();
     std::cin.ignore();
-    setWisdom(Trial.wisdom());
+    setWisdom(Trial);
     std::cout << "Your Wisdom stat is " << wisdom;
     std::cin.ignore();
 }
