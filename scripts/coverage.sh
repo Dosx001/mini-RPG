@@ -2,7 +2,7 @@
 root=`pwd`
 rm -rf coverage
 
-if [ $1 == 'all' ]
+if [ $# == 0 ]
 then
     files=('Inventory' 'Enemy')
 elif [ $1 == 'I' ]
@@ -23,7 +23,6 @@ done
 cd CMakeFiles/lib.dir/src
 
 for file in ${files[@]}
-
 do
     gcov ${file}.gcno
 done
