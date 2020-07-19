@@ -1,7 +1,7 @@
 #pragma once
 #include "pch.hpp"
 
-class Trials{
+class Trials {
     public:
         short speed();
         short luck();
@@ -10,5 +10,3 @@ class Trials{
     private:
         int findMatch(std::string& str, std::string& reg);
 };
-
-void sleep(short time);

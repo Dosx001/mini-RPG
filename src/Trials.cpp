@@ -218,9 +218,3 @@ int Trials::findMatch(std::string& input, std::string& answer) {
         return 0;
     }
 }
-
-void sleep(short time) {
-    clock_t startClock = clock();
-    float secondsAhead = time * CLOCKS_PER_SEC;
-    while (clock() < startClock + secondsAhead);
-}
