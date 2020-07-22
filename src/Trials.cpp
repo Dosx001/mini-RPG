@@ -228,7 +228,9 @@ short Trials::test() {
         std::cout << array[i] << " ";
     }
     std::cout << '\n';
+    int start = time(0);
     getline(std::cin, input);
+    int end = time(0) - start;
     Array ans = split(input);
     std::sort(ans.nums, ans.nums + 5);
     std::sort(array, array + 5);
@@ -237,6 +239,8 @@ short Trials::test() {
             std::cout << array[i] << " | " << ans.nums[i] << '\n';
         }
     }
+    std::cout << end;
+    return end;
 }
 
 Array Trials::split(std::string str_nums) {
@@ -245,7 +249,7 @@ Array Trials::split(std::string str_nums) {
     int start = 0;
     int end = 0;
     int num;
-    for(int i = 0; i < str_nums.length(); i++) {
+    for(int i = 0; i < (int)str_nums.length(); i++) {
         if(str_nums[i] == ' ') {
             std::stringstream str;
             str << str_nums.substr(start, end);
