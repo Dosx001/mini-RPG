@@ -80,7 +80,16 @@ void Player::setLuck(Trials& Trial) {
 }
 
 void Player::setSpeed(Trials& Trial) {
-    speed =+ Trial.speed() / 3;
+    short score = Trial.speed();
+    if(score <= 8) {
+        speed =+ 10;
+    } else if(score <= 10) {
+        speed =+ 7;
+    } else if(score <= 12) {
+        speed =+ 4;
+    } else {
+        speed =+ 1;
+    }
 }
 
 void Player::setIntel(Trials& Trial) {
@@ -106,6 +115,10 @@ void Player::setWisdom(Trials& Trial) {
     }
 }
 
+void Player::setStrength(Trials& Trial) {
+    speed =+ Trial.speed() / 3;
+}
+
 void Player::setStats() {
     std::cout << "You will now begin a set of trials. ";
     std::cin.ignore();
@@ -123,6 +136,9 @@ void Player::setStats() {
     std::cin.ignore();
     setWisdom(Trial);
     std::cout << "Your Wisdom stat is " << wisdom;
+    std::cin.ignore();
+    Trial.speed();
+    std::cout << "Your Strength stat is " << strength;
     std::cin.ignore();
 }
 

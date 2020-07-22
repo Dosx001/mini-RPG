@@ -4,7 +4,7 @@
 #include "Trials.hpp"
 #include "pch.hpp"
 
-class Player{
+class Player {
     private:
         std::string name;
         Inventory* ptrInvy;
@@ -27,6 +27,7 @@ class Player{
         void setSpeed(Trials& Trial);
         void setIntel(Trials& Trial);
         void setWisdom(Trials& Trial);
+        void setStrength(Trials& Trial);
         void setStats();
     public:
         std::string getName() const;
