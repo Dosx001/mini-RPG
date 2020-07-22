@@ -1,29 +1,27 @@
 #include "Trials.hpp"
 
 short Trials::speed() {
-    char hit;
-    int hits = 0;
-    std::cout << "Your Speed Trial will now begin. ";
-    std::cin.ignore();
-    std::cout << "Press any key and Enter to hit as times you can, under a time limit. ";
-    std::cin.ignore();
-    long t = time(0);
-    while (time(0) < t + (short) 5) {
-        std::cout << "hit\n";
-        std::cin >> hit;
-        hits++;
+    std::string input;
+    int array[5];
+    srand(time(0));
+    for(int i = 0; i < 5; i++) {
+        array[i] = rand() % 9999 + 1;
+        std::cout << array[i] << " ";
     }
-    std::cout << "Stop!!!\a\n";
-    std::cout << "Calculating...\n";
-    t = time(0);
-    while (time(0) < t + (short) 3) {
-        std::cout << t << '\n';
-        std::cin.ignore();
+    std::cout << '\n';
+    int start = time(0);
+    getline(std::cin, input);
+    int end = time(0) - start;
+    Array ans = split(input);
+    std::sort(ans.nums, ans.nums + 5);
+    std::sort(array, array + 5);
+    for(int i = 0; i < 5; i++) {
+        if(array[i] == ans.nums[i]) {
+            std::cout << array[i] << " | " << ans.nums[i] << '\n';
+        }
     }
-    std::cout << t << '\n';
-    std::cout << "Number of hits: \a" << hits;
-    std::cin.ignore();
-    return hits;
+    std::cout << end;
+    return end;
 }
 
 short Trials::luck() {
@@ -205,42 +203,30 @@ short Trials::wisdom() {
     return correct;
 }
 
-int Trials::findMatch(std::string& input, std::string& answer) {
-    std::string str (input);
-    std::regex reg (answer);
-    std::smatch mat;
-    std::regex_search(str, mat, reg);
-    if (not mat.empty()) {
-        std::cout << "Correct!\n";
-        return 1;
-    } else {
-        std::cout << "Wrong!\n";
-        return 0;
+short Trials::strength() {
+    char hit;
+    int hits = 0;
+    std::cout << "Your Strength Trial will now begin. ";
+    std::cin.ignore();
+    std::cout << "Press any key and Enter to hit as times you can, under a time limit. ";
+    std::cin.ignore();
+    long t = time(0);
+    while (time(0) < t + (short) 5) {
+        std::cout << "hit\n";
+        std::cin >> hit;
+        hits++;
     }
-}
-
-short Trials::test() {
-    std::string input;
-    int array[5];
-    srand(time(0));
-    for(int i = 0; i < 5; i++) {
-        array[i] = rand() % 9999 + 1;
-        std::cout << array[i] << " ";
+    std::cout << "Stop!!!\a\n";
+    std::cout << "Calculating...\n";
+    t = time(0);
+    while (time(0) < t + (short) 3) {
+        std::cout << t << '\n';
+        std::cin.ignore();
     }
-    std::cout << '\n';
-    int start = time(0);
-    getline(std::cin, input);
-    int end = time(0) - start;
-    Array ans = split(input);
-    std::sort(ans.nums, ans.nums + 5);
-    std::sort(array, array + 5);
-    for(int i = 0; i < 5; i++) {
-        if(array[i] == ans.nums[i]) {
-            std::cout << array[i] << " | " << ans.nums[i] << '\n';
-        }
-    }
-    std::cout << end;
-    return end;
+    std::cout << t << '\n';
+    std::cout << "Number of hits: \a" << hits;
+    std::cin.ignore();
+    return hits;
 }
 
 Array Trials::split(std::string str_nums) {
@@ -268,3 +254,19 @@ Array Trials::split(std::string str_nums) {
     output.nums[n] = num;
     return output;
 }
+
+int Trials::findMatch(std::string& input, std::string& answer) {
+    std::string str (input);
+    std::regex reg (answer);
+    std::smatch mat;
+    std::regex_search(str, mat, reg);
+    if (not mat.empty()) {
+        std::cout << "Correct!\n";
+        return 1;
+    } else {
+        std::cout << "Wrong!\n";
+        return 0;
+    }
+}
+
+

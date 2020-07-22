@@ -11,8 +11,8 @@ class Trials {
         short luck();
         short intel();
         short wisdom();
-        short test();
+        short strength();
     private:
-        int findMatch(std::string& str, std::string& reg);
         Array split(std::string str_nums);
+        int findMatch(std::string& str, std::string& reg);
 };
