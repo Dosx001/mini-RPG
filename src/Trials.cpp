@@ -4,6 +4,11 @@ short Trials::speed() {
     std::string input;
     int array[5];
     srand(time(0));
+    std::cout << "Your Speed Trial will now begin. ";
+    std::cin.ignore();
+    std::cout << "Sort a set of numbers as quick as possible. ";
+    std::cin.ignore();
+    std::cout << '\n';
     for(int i = 0; i < 5; i++) {
         array[i] = rand() % 9999 + 1;
         std::cout << array[i] << " ";
@@ -15,13 +20,13 @@ short Trials::speed() {
     Array ans = split(input);
     std::sort(ans.nums, ans.nums + 5);
     std::sort(array, array + 5);
+    int correct = 0;
     for(int i = 0; i < 5; i++) {
         if(array[i] == ans.nums[i]) {
-            std::cout << array[i] << " | " << ans.nums[i] << '\n';
+            correct++;
         }
     }
-    std::cout << end;
-    return end;
+    return end - correct;
 }
 
 short Trials::luck() {
