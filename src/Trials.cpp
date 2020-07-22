@@ -218,3 +218,49 @@ int Trials::findMatch(std::string& input, std::string& answer) {
         return 0;
     }
 }
+
+short Trials::test() {
+    std::string input;
+    int array[5];
+    srand(time(0));
+    for(int i = 0; i < 5; i++) {
+        array[i] = rand() % 9999 + 1;
+        std::cout << array[i] << " ";
+    }
+    std::cout << '\n';
+    getline(std::cin, input);
+    Array ans = split(input);
+    std::sort(ans.nums, ans.nums + 5);
+    std::sort(array, array + 5);
+    for(int i = 0; i < 5; i++) {
+        if(array[i] == ans.nums[i]) {
+            std::cout << array[i] << " | " << ans.nums[i] << '\n';
+        }
+    }
+}
+
+Array Trials::split(std::string str_nums) {
+    Array output;
+    int n = 0;
+    int start = 0;
+    int end = 0;
+    int num;
+    for(int i = 0; i < str_nums.length(); i++) {
+        if(str_nums[i] == ' ') {
+            std::stringstream str;
+            str << str_nums.substr(start, end);
+            str >> num;
+            output.nums[n] = num;
+            n++;
+            start = i + 1;
+            end = 0;
+        } else {
+            end ++;
+        }
+    }
+    std::stringstream str;
+    str << str_nums.substr(start, end);
+    str >> num;
+    output.nums[n] = num;
+    return output;
+}
