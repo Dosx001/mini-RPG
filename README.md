@@ -51,7 +51,7 @@ Initializer List |
     * :white_check_mark: Speed
     * :white_check_mark: Intelligence
     * :white_check_mark: Wisdom
-    * :black_square_button: Strength
+    * :white_check_mark: Strength
     * :black_square_button: Charisma
 * :white_check_mark: Quick menu to display actions
 * :white_check_mark: Full menu to display all information
