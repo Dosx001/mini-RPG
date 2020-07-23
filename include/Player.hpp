@@ -7,7 +7,7 @@
 class Player {
     private:
         std::string name;
-        Inventory* ptrInvy;
+        Inventory& Invy;
         PlayerClass* ptrCls;
         char classType[8];
         int health = 100;
@@ -19,7 +19,7 @@ class Player {
         short strength = 0;
         short charisma = 0;
     public:
-        Player(Inventory *Invy);
+        Player(Inventory& Invy);
     private:
         void createName();
         void setCls();

@@ -1,6 +1,6 @@
 #include "Player.hpp"
 
-Player::Player(Inventory *Invy) :ptrInvy(Invy) {
+Player::Player(Inventory& Invy) :Invy(Invy) {
     createName();
     setCls();
     setStats();
@@ -33,8 +33,8 @@ void Player::setCls() {
         std::cout << "Pick a class! Warrior | Hunter | Sorcerer\n";
         getline(std::cin, pick);
             if (pick == "Warrior") {
-                ptrInvy -> addItem("Rusty Sword");
-                ptrInvy -> addItem("Rusty Shield");
+                Invy.addItem("Rusty Sword");
+                Invy.addItem("Rusty Shield");
                 strength = 2;
                 charisma = 2;
                 std::cout << "Strength +2\nCharisma +2\n";
@@ -42,8 +42,8 @@ void Player::setCls() {
                 break;
             }
             if (pick == "Hunter") {
-                ptrInvy -> addItem("Wooden Bow");
-                ptrInvy -> addItem("Rusty Dagger");
+                Invy.addItem("Wooden Bow");
+                Invy.addItem("Rusty Dagger");
                 speed = 2;
                 luck = 2;
                 std::cout << "Speed +2\nLuck +2\n";
@@ -51,8 +51,8 @@ void Player::setCls() {
                 break;
             }
             if (pick == "Sorcerer") {
-                ptrInvy -> addItem("Wooden Wand");
-                ptrInvy -> addItem("Rusty Necklace");
+                Invy.addItem("Wooden Wand");
+                Invy.addItem("Rusty Necklace");
                 intel = 2;
                 wisdom = 2;
                 std::cout << "Intel +2\nWisdom +2\n";

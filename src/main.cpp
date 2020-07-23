@@ -6,10 +6,8 @@
 
 int main() {
     Inventory Invy;
-    Inventory* const ptrInvy = &Invy;
-    Player Py(ptrInvy);
-    Player* const ptrPy = &Py;
-    Menu Mu(ptrPy, ptrInvy);
+    Player Py(Invy);
+    Menu Mu(Py, Invy);
     std::cin.ignore();
     std::string line(50, '_');
     std::string input = "Start";
@@ -29,4 +27,3 @@ int main() {
     }
     return 0;
 }
-
