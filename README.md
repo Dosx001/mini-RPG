@@ -57,7 +57,7 @@ Initializer List |
 * :white_check_mark: Quick menu to display actions
 * :white_check_mark: Full menu to display all information
     * :white_check_mark: Use Player and Inventory pointers to update Full Menu
-* :black_square_button: Actions class? e.g. attack, heal, move
+* :black_square_button: ~~Actions class? e.g. attack, heal, move~~
 * :black_square_button: Map
 * :black_square_button: Levels
 * :white_check_mark: Enemies
