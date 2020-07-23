@@ -12,16 +12,16 @@ This table is just meant for me to keep track of concepts I have learned or need
 Concepts Learned | In Progess | Syntax Learned | In Progess
 --- | --- | --- | ---
 Switch | Static | Varibles | Lambdas
-Array and vector | Smart pointers | Logical Operators | Sorting
+Array and vector | Smart pointers | Logical Operators | Conditional Expression
 Makefile | Namespace | If statements | List Comprehension
-cmake | Libraries | Functions | Conditional Expression
+cmake | Libraries | Functions
 Pointers and references | C/C++ casting | For Loop
 header files | Friend | While loop
 precompiled header | Access Specifiers: Protected| Class
 Stack vs Heap Memory | Lvalues and Rvalues | Constructors
 Const | Move Semantics | Inheritance
 Struct | | Composition
-Initializer List |
+Initializer List | | Sorting
 
 # Bugs 
 :white_check_mark: **Bug 1**
