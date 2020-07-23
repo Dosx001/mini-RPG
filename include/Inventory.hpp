@@ -1,7 +1,7 @@
 #pragma once
 #include "pch.hpp"
 
-class Inventory{
+class Inventory {
     private:
         short size = 10;
         short numItems = 0;
@@ -17,6 +17,8 @@ class Inventory{
         bool removeItem(std::string item);
         void addHP();
         void addMP();
+        void removeHP();
+        void removeMP();
         short getHP() const;
         short getMP() const;
         short getMaxPotions() const;

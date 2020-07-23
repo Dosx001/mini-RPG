@@ -69,6 +69,14 @@ void Inventory::addMP() {
     }
 }
 
+void Inventory::removeHP() {
+    healthPotions -= 1;
+}
+
+void Inventory::removeMP() {
+    manaPotions -= 1;
+}
+
 short Inventory::getHP() const {
     return healthPotions;
 }
