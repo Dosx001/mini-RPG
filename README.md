@@ -5,6 +5,7 @@ Just trying to learn C++ by creating a simple text game.\
 * [Syntax and Concepts to Learn](#syntax-and-concepts-to-learn)
 * [Bugs](#bugs)
 * [To Do List](#to-do-list)
+* [Notes](#notes)
 
 # Syntax and Concepts to Learn
 This table is just meant for me to keep track of concepts I have learned or need to learn.
@@ -66,3 +67,18 @@ Initializer List |
 * :black_square_button: Equipment
 * :white_check_mark: Turn based battle system?
 * :black_square_button: Installation file
+
+# Notes
+## Player Class Abilities Ideas
+* Warrior
+    * Self Damage reduction
+    * Damage increase
+    * Special attack
+* Sorcerer
+    * Restore full health
+    * Confuse enemy
+    * Special attack
+* Hunter
+    * Increase crit
+    * Dodge
+    * Special attack
