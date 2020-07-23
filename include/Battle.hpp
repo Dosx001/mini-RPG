@@ -10,7 +10,7 @@ class Battle {
         Enemy& Ey;
         Menu& Mu;
         std::string input;
-        int turns = 2;
+        int moves = 2;
         int PyDamage[2] = {0, 0};
         int PyBlocks = 0;
         int EyDamage[2] = {0, 0};

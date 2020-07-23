@@ -24,7 +24,7 @@ void Battle::PlayerStatus() {
 }
 
 void Battle::PlayerTurn() {
-    while (0 < turns) {
+    while (0 < moves) {
         std::cin >> input;
         if (input == "attack") {
             if (PyDamage[0] == 0) {
@@ -32,38 +32,38 @@ void Battle::PlayerTurn() {
             } else {
                 PyDamage[1] = Py.getPtrCls() -> attack();
             }
-            turns--;
+            moves--;
         } else if (input == "block") {
             PyBlocks++;
-            turns--;
+            moves--;
         } else if (input == "health") {
             Py.restoreHealth();
-            turns--;
+            moves--;
         } else if (input == "mana") {
             Py.restoreMana();
-            turns--;
+            moves--;
         } else if (input == "menu") {
             Mu.fullMenu();
         }
     }
-    turns += 2;
+    moves += 2;
 }
 
 void Battle::EnemyPhase() {
-    while (0 < turns) {
+    while (0 < moves) {
         if (40 < Ey.getHealth()) {
             if (EyDamage[0] == 0) {
                 EyDamage[0] = Ey.attack();
             } else {
                 EyDamage[1] = Ey.attack();
             }
-            turns--;
+            moves--;
         } else {
             EyBlocks++;
-            turns--;
+            moves--;
         }
     }
-    turns += 2;
+    moves += 2;
 }
 
 void Battle::DamagePhase() {
