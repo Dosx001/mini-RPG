@@ -44,6 +44,6 @@ class Player {
         short getCharisma() const;
         PlayerClass* getPtrCls();
         bool takeDamage(int& damage);
-        void restoreHealth();
-        void restoreMana();
+        bool restoreHealth();
+        bool restoreMana();
 };

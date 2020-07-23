@@ -196,30 +196,38 @@ bool Player::takeDamage(int& damage) {
     return true;
 }
 
-void Player::restoreHealth() {
+bool Player::restoreHealth() {
+    if (health == MaxHealth) {
+        std::cout << "At Max Health.\n";
+        return false;
+    }
     if(Invy.getHP() != 0) {
         health += 50;
         if(MaxHealth < health) {
             health = MaxHealth;
         }
         Invy.removeHP();
-        std::cout << "-1 Health Potion" << '\n' << "Health: " << health << ' ';
-    } else {
-        std::cout << "No Health Potions available. ";
+        std::cout << "-1 Health Potion" << '\n' << "Health: " << health << '\n';
+        return true;
     }
-    std::cin.ignore();
+    std::cout << "No Health Potions available.\n";
+    return false;
 }
 
-void Player::restoreMana() {
+bool Player::restoreMana() {
+    if (mana == MaxMana) {
+        std::cout << "At Max Mana.\n";
+        return false;
+    }
     if(Invy.getMP() != 0) {
         mana += 50;
         if(MaxMana < mana) {
             mana = MaxMana;
         }
         Invy.removeMP();
-        std::cout << "-1 Mana Potion" << '\n' << "Mana: " << mana << ' ';
-    } else {
-        std::cout << "No Mana Potions available. ";
+        std::cout << "-1 Mana Potion" << '\n' << "Mana: " << mana << '\n';
+        return true;
     }
-    std::cin.ignore();
+    std::cout << "No Mana Potions available.\n";
+    return false;
 }
