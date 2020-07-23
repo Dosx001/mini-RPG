@@ -38,14 +38,18 @@ void Battle::PlayerTurn() {
         } else if (input == "block") {
             PyBlocks++;
             moves--;
-        } else if (input == "restore health") {
-            Py.restoreHealth();
-            moves--;
-        } else if (input == "restore mana") {
-            Py.restoreMana();
-            moves--;
+        } else if (input == "restore health" or input == "heal") {
+            if (Py.restoreHealth()) {
+                moves--;
+            }
+        } else if (input == "restore mana" or input == "mana") {
+            if (Py.restoreMana()) {
+                moves--;
+            }
         } else if (input == "menu") {
             Mu.fullMenu();
+        } else {
+            std::cout << "attack | block | restore health | restore mana | menu\n";
         }
     }
     moves += 2;
