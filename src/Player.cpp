@@ -195,3 +195,31 @@ bool Player::takeDamage(int& damage) {
     }
     return true;
 }
+
+void Player::restoreHealth() {
+    if(Invy.getHP() != 0) {
+        health += 50;
+        if(health < MaxHealth) {
+            health = MaxHealth;
+        }
+        Invy.removeHP();
+        std::cout << "-1 Health Potion" << '\n' << "Health: " << health << ' ';
+    } else {
+        std::cout << "No Health Potions available. ";
+    }
+    std::cin.ignore();
+}
+
+void Player::restoreMana() {
+    if(Invy.getMP() != 0) {
+        mana += 50;
+        if(mana < MaxMana) {
+            mana = MaxMana;
+        }
+        Invy.removeMP();
+        std::cout << "-1 Mana Potion" << '\n' << "Mana: " << mana << ' ';
+    } else {
+        std::cout << "No Mana Potions available. ";
+    }
+    std::cin.ignore();
+}

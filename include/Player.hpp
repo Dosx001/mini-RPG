@@ -12,6 +12,8 @@ class Player {
         char classType[8];
         int health = 100;
         int mana = 100;
+        int MaxHealth = 100;
+        int MaxMana = 100;
         short speed = 0;
         short luck = 0;
         short intel = 0;
@@ -42,4 +44,6 @@ class Player {
         short getCharisma() const;
         PlayerClass* getPtrCls();
         bool takeDamage(int& damage);
+        void restoreHealth();
+        void restoreMana();
 };
