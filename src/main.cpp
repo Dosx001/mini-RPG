@@ -23,7 +23,7 @@ int main() {
         }
         std::cout << '\n';
         Enemy Ey;
-        Battle Ba(Py, Ey);
+        Battle Ba(Py, Ey, Mu);
     }
     return 0;
 }
