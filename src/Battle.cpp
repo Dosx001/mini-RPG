@@ -24,8 +24,10 @@ void Battle::PlayerStatus() {
 }
 
 void Battle::PlayerTurn() {
+    std::cout << "attack | block | restore health | restore mana | menu\n";
     while (0 < moves) {
-        std::cin >> input;
+        std::cout << "Moves: " << moves << "/2\n";
+        getline(std::cin, input);
         if (input == "attack") {
             if (PyDamage[0] == 0) {
                 PyDamage[0] = Py.getPtrCls() -> attack();
@@ -36,10 +38,10 @@ void Battle::PlayerTurn() {
         } else if (input == "block") {
             PyBlocks++;
             moves--;
-        } else if (input == "health") {
+        } else if (input == "restore health") {
             Py.restoreHealth();
             moves--;
-        } else if (input == "mana") {
+        } else if (input == "restore mana") {
             Py.restoreMana();
             moves--;
         } else if (input == "menu") {
