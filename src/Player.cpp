@@ -199,7 +199,7 @@ bool Player::takeDamage(int& damage) {
 void Player::restoreHealth() {
     if(Invy.getHP() != 0) {
         health += 50;
-        if(health < MaxHealth) {
+        if(MaxHealth < health) {
             health = MaxHealth;
         }
         Invy.removeHP();
@@ -213,7 +213,7 @@ void Player::restoreHealth() {
 void Player::restoreMana() {
     if(Invy.getMP() != 0) {
         mana += 50;
-        if(mana < MaxMana) {
+        if(MaxMana < mana) {
             mana = MaxMana;
         }
         Invy.removeMP();
