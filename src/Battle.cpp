@@ -33,10 +33,17 @@ void Battle::PlayerTurn() {
                 PyDamage[1] = Py.getPtrCls() -> attack();
             }
             turns--;
-        }
-        if (input == "block") {
+        } else if (input == "block") {
             PyBlocks++;
             turns--;
+        } else if (input == "health") {
+            Py.restoreHealth();
+            turns--;
+        } else if (input == "mana") {
+            Py.restoreMana();
+            turns--;
+        } else if (input == "menu") {
+            Mu.fullMenu();
         }
     }
     turns += 2;
