@@ -10,9 +10,10 @@ void Menu::quickMenu() {
 }
 
 void Menu::fullMenu() {
+    int XP = (Py.getLevel() + 1) * (Py.getLevel() + 1) + 50;
     std::cout << "Name: " << Py.getName() << " | Class: "
         << Py.getClassType() << '\n'
-    << "Level: " << Py.getLevel() << " | XP: " << Py.getExperience() << '\n'
+    << "Level: " << Py.getLevel() << " | XP: " << Py.getExperience() << '/' << XP << '\n'
     << "Health: " << Py.getHealth() << '/' << Py.getMaxHealth()
         << " | Mana: " << Py.getMana() << '/' << Py.getMaxMana() << '\n'
     << "Stats: " << "Luck=" << Py.getLuck() << " Speed="
