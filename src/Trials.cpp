@@ -234,7 +234,7 @@ short Trials::strength() {
     return hits;
 }
 
-Array Trials::split(std::string str_nums) {
+Array Trials::split(std::string& str_nums) {
     Array output;
     int n = 0;
     int start = 0;

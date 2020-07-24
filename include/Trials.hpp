@@ -13,6 +13,6 @@ class Trials {
         short wisdom();
         short strength();
     private:
-        Array split(std::string str_nums);
+        Array split(std::string& str_nums);
         int findMatch(std::string& str, std::string& reg);
 };
