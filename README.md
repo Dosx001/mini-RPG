@@ -61,7 +61,7 @@ Initializer List | | Sorting
 * :black_square_button: Map
 * :black_square_button: Levels
 * :white_check_mark: Enemies
-* :black_square_button: Leveling system
+* :white_check_mark: Leveling system
 * :white_check_mark: Classes e.g. Warrior, Sorcerer, Hunter
     * :black_square_button: subclass?
 * :black_square_button: Equipment
