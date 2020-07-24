@@ -40,6 +40,8 @@ class Player {
         int getMaxHealth() const;
         int getMana() const;
         int getMaxMana() const;
+        int getLevel() const;
+        int getExperience() const;
         short getLuck() const;
         short getSpeed() const;
         short getIntel() const;

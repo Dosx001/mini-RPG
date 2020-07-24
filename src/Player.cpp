@@ -166,6 +166,14 @@ int Player::getMaxMana() const {
     return maxMana;
 }
 
+int Player::getLevel() const {
+    return level;
+}
+
+int Player::getExperience() const {
+    return experience;
+}
+
 short Player::getLuck() const {
     return luck;
 }
