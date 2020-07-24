@@ -37,7 +37,9 @@ class Player {
         std::string getName() const;
         const char* getClassType() const;
         int getHealth() const;
+        int getMaxHealth() const;
         int getMana() const;
+        int getMaxMana() const;
         short getLuck() const;
         short getSpeed() const;
         short getIntel() const;

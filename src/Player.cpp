@@ -154,8 +154,16 @@ int Player::getHealth() const {
     return health;
 }
 
+int Player::getMaxHealth() const {
+    return maxHealth;
+}
+
 int Player::getMana() const {
     return mana;
+}
+
+int Player::getMaxMana() const {
+    return maxMana;
 }
 
 short Player::getLuck() const {
