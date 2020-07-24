@@ -35,9 +35,9 @@ void Battle::PlayerTurn() {
         getline(std::cin, input);
         if (input == "attack" or input == "atk") {
             if (PyDamage[0] == 0) {
-                PyDamage[0] = Py.getPtrCls() -> attack();
+                PyDamage[0] = Py.getPtrCls() -> attack(Py.getLevel());
             } else {
-                PyDamage[1] = Py.getPtrCls() -> attack();
+                PyDamage[1] = Py.getPtrCls() -> attack(Py.getLevel());
             }
             moves--;
         } else if (input == "block") {
@@ -91,7 +91,7 @@ void Battle::DamagePhase() {
     for (int& damage : EyDamage) {
         if (0 < damage) {
             if (0 < PyBlocks) {
-                Py.getPtrCls() -> block(damage);
+                Py.getPtrCls() -> block(damage, Py.getLevel());
                 PyBlocks--;
             }
             Py.takeDamage(damage);
