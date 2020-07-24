@@ -1,30 +1,30 @@
 #include "Menu.hpp"
 
-Menu::Menu(Player& Py, Inventory& Invy) :ptrPy(Py), ptrInvy(Invy) {}
+Menu::Menu(Player& Py, Inventory& Invy) :Py(Py), Invy(Invy) {}
 
 void Menu::quickMenu() {
-    std::cout << ptrPy.getName() << " | HP: " << ptrPy.getHealth()
-        << " | MP: " << ptrPy.getMana() << '\n';
+    std::cout << Py.getName() << " | HP: " << Py.getHealth()
+        << " | MP: " << Py.getMana() << '\n';
     std::cout << "Full Menu | Inventory | Quit\n";
 }
 
 void Menu::fullMenu() {
-    std::cout << "Name: " << ptrPy.getName() << " | Class: "
-        << ptrPy.getClassType() << '\n';
-    std::cout << "Health: " << ptrPy.getHealth()
-        << " | Mana: " << ptrPy.getMana() << '\n';
-    std::cout << "Stats: " << "Luck=" << ptrPy.getLuck() << " Speed="
-        << ptrPy.getSpeed() << " Intel=" << ptrPy.getIntel() << " Wisdom="
-        << ptrPy.getWisdom() << " Strength=" << ptrPy.getStrength()
-        << " Charisma=" << ptrPy.getCharisma() << '\n';
-    if (ptrInvy.getNumItems() == 0) {
+    std::cout << "Name: " << Py.getName() << " | Class: "
+        << Py.getClassType() << '\n';
+    std::cout << "Health: " << Py.getHealth()
+        << " | Mana: " << Py.getMana() << '\n';
+    std::cout << "Stats: " << "Luck=" << Py.getLuck() << " Speed="
+        << Py.getSpeed() << " Intel=" << Py.getIntel() << " Wisdom="
+        << Py.getWisdom() << " Strength=" << Py.getStrength()
+        << " Charisma=" << Py.getCharisma() << '\n';
+    if (Invy.getNumItems() == 0) {
         std::cout << "Inventory: empty\n";
     } else {
-        std::cout << "Inventory: " << ptrInvy.getNumItems()
-           << "/" <<  ptrInvy.getSize() << '\n';
-        ptrInvy.displayItems();
+        std::cout << "Inventory: " << Invy.getNumItems()
+           << "/" <<  Invy.getSize() << '\n';
+        Invy.displayItems();
     }
-    std::cout << "Health Potions: " << ptrInvy.getHP() << "/"
-        << ptrInvy.getMaxPotions() << " Mana Potions: "
-        << ptrInvy.getMP() << "/" << ptrInvy.getMaxPotions() << '\n';
+    std::cout << "Health Potions: " << Invy.getHP() << "/"
+        << Invy.getMaxPotions() << " Mana Potions: "
+        << Invy.getMP() << "/" << Invy.getMaxPotions() << '\n';
 }

@@ -4,8 +4,8 @@
 
 class Menu {
     private:
-        Player& ptrPy;
-        Inventory& ptrInvy;
+        Player& Py;
+        Inventory& Invy;
     public:
         Menu(Player& Py, Inventory& Invy);
         void quickMenu();
