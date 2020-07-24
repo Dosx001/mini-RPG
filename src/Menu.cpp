@@ -3,14 +3,16 @@
 Menu::Menu(Player& Py, Inventory& Invy) :Py(Py), Invy(Invy) {}
 
 void Menu::quickMenu() {
-    std::cout << Py.getName() << " | HP: " << Py.getHealth() << '/' << Py.getMaxHealth()
-        << " | MP: " << Py.getMana() << '/' << Py.getMaxMana() << '\n';
+    std::cout << Py.getName() << " | Lvl: " << Py.getLevel() << " | HP: " << Py.getHealth()
+        << '/' << Py.getMaxHealth() << " | MP: " << Py.getMana() << '/'
+        << Py.getMaxMana() << '\n';
     std::cout << "Full Menu | Inventory | Quit\n";
 }
 
 void Menu::fullMenu() {
     std::cout << "Name: " << Py.getName() << " | Class: "
         << Py.getClassType() << '\n';
+    std::cout << "Level: " << Py.getLevel() << " | XP: " << Py.getExperience() << '\n';
     std::cout << "Health: " << Py.getHealth() << '/' << Py.getMaxHealth()
         << " | Mana: " << Py.getMana() << '/' << Py.getMaxMana() << '\n';
     std::cout << "Stats: " << "Luck=" << Py.getLuck() << " Speed="
