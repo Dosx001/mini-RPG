@@ -3,7 +3,7 @@
 Player::Player(Inventory& Invy) :Invy(Invy) {
     createName();
     setCls();
-    //setStats();
+    setStats();
 }
 
 void Player::createName() {
@@ -38,7 +38,7 @@ void Player::setCls() {
                 strength = 2;
                 charisma = 2;
                 std::cout << "Strength +2\nCharisma +2\n";
-                ptrCls = new Warrior(speed, luck, intel, wisdom, strength, charisma);
+                ptrCls = new Warrior(speed, luck, intel, wisdom, strength, charisma, level);
                 break;
             }
             if (pick == "Hunter") {
@@ -47,7 +47,7 @@ void Player::setCls() {
                 speed = 2;
                 luck = 2;
                 std::cout << "Speed +2\nLuck +2\n";
-                ptrCls = new Hunter(speed, luck, intel, wisdom, strength, charisma);
+                ptrCls = new Hunter(speed, luck, intel, wisdom, strength, charisma, level);
                 break;
             }
             if (pick == "Sorcerer") {
@@ -56,7 +56,7 @@ void Player::setCls() {
                 intel = 2;
                 wisdom = 2;
                 std::cout << "Intel +2\nWisdom +2\n";
-                ptrCls = new Sorcerer(speed, luck, intel, wisdom, strength, charisma);
+                ptrCls = new Sorcerer(speed, luck, intel, wisdom, strength, charisma, level);
                 break;
             }
     }

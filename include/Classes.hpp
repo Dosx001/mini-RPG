@@ -9,28 +9,30 @@ class PlayerClass {
         short& wisdom;
         short& strength;
         short& charisma;
-        PlayerClass(short& Spd, short& Luk, short& Int, short& Wid, short& Str, short& Chr);
-        virtual int attack(int lvl);
-        virtual void block(int& damage, int lvl);
+        int& level;
+        PlayerClass(short& Spd, short& Luk, short& Int, short& Wid,
+            short& Str, short& Chr, int& lvl);
+        virtual int attack();
+        virtual void block(int& damage);
 };
 
 class Warrior: public PlayerClass {
     public:
         using PlayerClass::PlayerClass;
-        int attack(int lvl);
-        void block(int& damage, int lvl);
+        int attack();
+        void block(int& damage);
 };
 
 class Hunter: public PlayerClass {
     public:
         using PlayerClass::PlayerClass;
-        int attack(int lvl);
-        void block(int& damage, int lvl);
+        int attack();
+        void block(int& damage);
 };
 
 class Sorcerer: public PlayerClass {
     public:
         using PlayerClass::PlayerClass;
-        int attack(int lvl);
-        void block(int& damage, int lvl);
+        int attack();
+        void block(int& damage);
 };
