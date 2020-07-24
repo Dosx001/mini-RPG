@@ -3,7 +3,7 @@
 Player::Player(Inventory& Invy) :Invy(Invy) {
     createName();
     setCls();
-    setStats();
+    //setStats();
 }
 
 void Player::createName() {
@@ -197,14 +197,14 @@ bool Player::takeDamage(int& damage) {
 }
 
 bool Player::restoreHealth() {
-    if (health == MaxHealth) {
-        std::cout << "At Max Health.\n";
+    if (health == maxHealth) {
+        std::cout << "At max Health.\n";
         return false;
     }
     if(Invy.getHP() != 0) {
         health += 50;
-        if(MaxHealth < health) {
-            health = MaxHealth;
+        if(maxHealth < health) {
+            health = maxHealth;
         }
         Invy.removeHP();
         std::cout << "-1 Health Potion" << '\n' << "Health: " << health << '\n';
@@ -215,14 +215,14 @@ bool Player::restoreHealth() {
 }
 
 bool Player::restoreMana() {
-    if (mana == MaxMana) {
-        std::cout << "At Max Mana.\n";
+    if (mana == maxMana) {
+        std::cout << "At max Mana.\n";
         return false;
     }
     if(Invy.getMP() != 0) {
         mana += 50;
-        if(MaxMana < mana) {
-            mana = MaxMana;
+        if(maxMana < mana) {
+            mana = maxMana;
         }
         Invy.removeMP();
         std::cout << "-1 Mana Potion" << '\n' << "Mana: " << mana << '\n';
@@ -230,4 +230,39 @@ bool Player::restoreMana() {
     }
     std::cout << "No Mana Potions available.\n";
     return false;
+}
+
+void Player::gainXP(int& XP) {
+    experience += XP;
+    int lvl = (level + 1) * (level + 1) + 50;
+    if (lvl < experience) {
+        experience = experience - lvl;
+        level++;
+        maxHealth += 50;
+        health = maxHealth;
+        maxMana += 50;
+        mana = maxMana;
+        int SP = 2;
+        std::string input;
+        while (0 < SP) {
+            std::cout << "Upgrade: speed | luck | intel | wisdom | strength | charisma\n";
+            std::cin >> input;
+            if (input == "speed") {
+                speed++;
+            } else if (input == "luck") {
+                luck++;
+            } else if (input == "intel") {
+                intel++;
+            } else if (input == "wisdom") {
+                wisdom++;
+            } else if (input == "strength") {
+                strength++;
+            } else if (input == "charisma") {
+                charisma++;
+            } else {
+                SP++;
+            }
+            SP--;
+        }
+    }
 }

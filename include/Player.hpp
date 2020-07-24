@@ -12,8 +12,10 @@ class Player {
         char classType[8];
         int health = 100;
         int mana = 100;
-        int MaxHealth = 100;
-        int MaxMana = 100;
+        int maxHealth = 100;
+        int maxMana = 100;
+        int level = 0;
+        int experience = 0;
         short speed = 0;
         short luck = 0;
         short intel = 0;
@@ -46,4 +48,5 @@ class Player {
         bool takeDamage(int& damage);
         bool restoreHealth();
         bool restoreMana();
+        void gainXP(int& XP);
 };

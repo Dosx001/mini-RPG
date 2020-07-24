@@ -11,6 +11,11 @@ Battle::Battle(Player& player, Enemy& enemy, Menu& menu)
         std::cout << EyBlocks << " " << EyDamage[0] << " " << EyDamage[1] << '\n';
         DamagePhase();
     }
+    if (Ey.getHealth() < 0) {
+        int XP = 50;
+        std::cout << '+' << XP << "XP\n";
+        Py.gainXP(XP);
+    }
 }
 
 void Battle::EnemyStatus() {
@@ -28,7 +33,7 @@ void Battle::PlayerTurn() {
     while (0 < moves) {
         std::cout << "Moves: " << moves << "/2\n";
         getline(std::cin, input);
-        if (input == "attack") {
+        if (input == "attack" or input == "atk") {
             if (PyDamage[0] == 0) {
                 PyDamage[0] = Py.getPtrCls() -> attack();
             } else {
