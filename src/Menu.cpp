@@ -11,14 +11,17 @@ void Menu::quickMenu() {
 
 void Menu::fullMenu() {
     std::cout << "Name: " << Py.getName() << " | Class: "
-        << Py.getClassType() << '\n';
-    std::cout << "Level: " << Py.getLevel() << " | XP: " << Py.getExperience() << '\n';
-    std::cout << "Health: " << Py.getHealth() << '/' << Py.getMaxHealth()
-        << " | Mana: " << Py.getMana() << '/' << Py.getMaxMana() << '\n';
-    std::cout << "Stats: " << "Luck=" << Py.getLuck() << " Speed="
+        << Py.getClassType() << '\n'
+    << "Level: " << Py.getLevel() << " | XP: " << Py.getExperience() << '\n'
+    << "Health: " << Py.getHealth() << '/' << Py.getMaxHealth()
+        << " | Mana: " << Py.getMana() << '/' << Py.getMaxMana() << '\n'
+    << "Stats: " << "Luck=" << Py.getLuck() << " Speed="
         << Py.getSpeed() << " Intel=" << Py.getIntel() << " Wisdom="
         << Py.getWisdom() << " Strength=" << Py.getStrength()
-        << " Charisma=" << Py.getCharisma() << '\n';
+        << " Charisma=" << Py.getCharisma() << '\n'
+    << "Health Potions: " << Invy.getHP() << "/"
+        << Invy.getMaxPotions() << " Mana Potions: "
+        << Invy.getMP() << "/" << Invy.getMaxPotions() << '\n';
     if (Invy.getNumItems() == 0) {
         std::cout << "Inventory: empty\n";
     } else {
@@ -26,7 +29,4 @@ void Menu::fullMenu() {
            << "/" <<  Invy.getSize() << '\n';
         Invy.displayItems();
     }
-    std::cout << "Health Potions: " << Invy.getHP() << "/"
-        << Invy.getMaxPotions() << " Mana Potions: "
-        << Invy.getMP() << "/" << Invy.getMaxPotions() << '\n';
 }
