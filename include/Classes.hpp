@@ -9,9 +9,9 @@ class PlayerClass {
         short& wisdom;
         short& strength;
         short& charisma;
-        int& level;
+        short& level;
         PlayerClass(short& Spd, short& Luk, short& Int, short& Wid,
-            short& Str, short& Chr, int& lvl);
+            short& Str, short& Chr, short& lvl);
         virtual int attack();
         virtual void block(int& damage);
 };

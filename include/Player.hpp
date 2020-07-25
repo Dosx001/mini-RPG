@@ -14,7 +14,7 @@ class Player {
         int mana = 100;
         int maxHealth = 100;
         int maxMana = 100;
-        int level = 0;
+        short level = 0;
         int experience = 0;
         short speed = 0;
         short luck = 0;

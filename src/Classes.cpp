@@ -1,7 +1,7 @@
 #include "Classes.hpp"
 
 PlayerClass::PlayerClass(short& Spd, short& Luk, short& Int,
-        short& Wid, short& Str, short& Chr, int& lvl)
+        short& Wid, short& Str, short& Chr, short& lvl)
     :speed(Spd), luck(Luk), intel(Int), wisdom(Wid), strength(Str),
         charisma(Chr), level(lvl) {}
 

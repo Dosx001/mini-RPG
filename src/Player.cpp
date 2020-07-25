@@ -3,7 +3,7 @@
 Player::Player(Inventory& Invy) :Invy(Invy) {
     createName();
     setCls();
-    setStats();
+    //setStats();
 }
 
 void Player::createName() {
@@ -252,7 +252,7 @@ void Player::gainXP(int& XP) {
     experience += XP;
     int lvl = (level + 1) * (level + 1) + 50;
     if (lvl < experience) {
-        experience = experience - lvl;
+        experience -= lvl;
         level++;
         maxHealth += 50;
         health = maxHealth;
