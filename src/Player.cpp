@@ -3,7 +3,12 @@
 Player::Player(Inventory& Invy) :Invy(Invy) {
     createName();
     setCls();
-    //setStats();
+    setStats();
+}
+
+Player::~Player() {
+    delete ptrCls;
+    std::cout << "You Died!\n";
 }
 
 void Player::createName() {

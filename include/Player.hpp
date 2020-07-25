@@ -24,6 +24,7 @@ class Player {
         short charisma = 0;
     public:
         Player(Inventory& Invy);
+        ~Player();
     private:
         void createName();
         void setCls();

@@ -11,7 +11,7 @@ int main() {
     std::cin.ignore();
     std::string line(50, '_');
     std::string input = "Start";
-    while (input != "Quit") {
+    while (input != "Quit" and Py.getHealth() != 0) {
         Mu.quickMenu();
         getline(std::cin, input);
         std::cout << line << '\n';
