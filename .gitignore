@@ -9,3 +9,4 @@ Makefile
 *.html
 *.png
 *.css
+*.out
