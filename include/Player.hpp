@@ -9,7 +9,6 @@ class Player {
         std::string name;
         Inventory& Invy;
         PlayerClass* ptrCls;
-        char classType[8];
         int health = 100;
         int mana = 100;
         int maxHealth = 100;

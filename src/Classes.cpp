@@ -10,6 +10,11 @@ int PlayerClass::attack() {
 }
 
 void PlayerClass::block(int& damage) {
+    damage--;
+}
+
+char* PlayerClass::getType() {
+    return type;
 }
 
 int Warrior::attack() {

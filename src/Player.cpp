@@ -65,7 +65,6 @@ void Player::setCls() {
                 break;
             }
     }
-    pick.copy(classType, pick.size() + 1);
 }
 
 void Player::setLuck(Trials& Trial) {
@@ -152,7 +151,7 @@ std::string Player::getName() const {
 }
 
 const char* Player::getClassType() const {
-    return classType;
+    return ptrCls -> getType();
 }
 
 int Player::getHealth() const {
