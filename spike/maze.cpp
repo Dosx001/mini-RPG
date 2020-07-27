@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+
 short maze[851] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,
                    1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,1,0,1,
                    1,0,1,1,1,1,1,0,1,0,1,0,1,0,1,1,1,0,1,0,1,1,1,0,1,1,1,0,1,0,1,0,1,0,1,0,1,
@@ -76,14 +78,17 @@ bool move() {
             break;
         default:
             std::cout << "Invalid Input\n";
+            return false;
     }
     maze[row * 37 + column] = 0;
     return true;
 };
 
 int main() {
+    system("clear");
     while (true) {
         move();
+        system("clear");
     }
     return 0;
 }
