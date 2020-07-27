@@ -29,7 +29,7 @@ bool move() {
     short row;
     short column;
     for (int i = 0; i < 851; i++) {
-       switch(maze[i]) {
+        switch(maze[i]) {
             case 0:
                std::cout << ' ';
                break;
@@ -45,39 +45,39 @@ bool move() {
             std::cout << '\n';
         }
     }
-    char move;
-    std::cin >> move;
-    switch(move) {
+    char input;
+    std::cin >> input;
+    int next;
+    switch(input) {
         case 'w':
-            if (maze[(row - 1) * 37 + column] == 1) {
-                std::cout << "Invalid Move\n";
+            next = (row - 1) * 37 + column;
+            if (maze[next] == 1) {
                 return false;
             }
-            maze[(row - 1) * 37 + column] = 2;
+            maze[next] = 2;
             break;
         case 's':
-            if (maze[(row + 1) * 37 + column] == 1) {
-                std::cout << "Invalid Move\n";
+            next = (row + 1) * 37 + column;
+            if (maze[next] == 1) {
                 return false;
             }
-            maze[(row + 1) * 37 + column] = 2;
+            maze[next] = 2;
             break;
         case 'd':
-            if (maze[row * 37 + (column + 1)] == 1) {
-                std::cout << "Invalid Move\n";
+            next = row * 37 + (column + 1);
+            if (maze[next] == 1) {
                 return false;
             }
-            maze[row * 37 + (column + 1)] = 2;
+            maze[next] = 2;
             break;
         case 'a':
-            if (maze[row * 37 + (column - 1)] == 1) {
-                std::cout << "Invalid Move\n";
+            next = row * 37 + (column - 1);
+            if (maze[next] == 1) {
                 return false;
             }
-            maze[row * 37 + (column - 1)] = 2;
+            maze[next] = 2;
             break;
         default:
-            std::cout << "Invalid Input\n";
             return false;
     }
     maze[row * 37 + column] = 0;
@@ -85,10 +85,9 @@ bool move() {
 };
 
 int main() {
-    system("clear");
     while (true) {
-        move();
         system("clear");
+        move();
     }
     return 0;
 }
