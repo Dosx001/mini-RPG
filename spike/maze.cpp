@@ -27,7 +27,7 @@ void move() {
     short row;
     short column;
     for (int i = 0; i < 851; i++) {
-        switch(maze[i]) {
+       switch(maze[i]) {
             case 0:
                std::cout << ' ';
                break;
@@ -42,6 +42,26 @@ void move() {
         if (i % 37 == 36) {
             std::cout << '\n';
         }
+    }
+    char move;
+    std::cin >> move;
+    maze[row * 37 + column] = 0;
+    switch(move) {
+        case 'w':
+            maze[(row - 1) * 37 + column] = 2;
+            break;
+        case 's':
+            maze[(row + 1) * 37 + column] = 2;
+            break;
+        case 'd':
+            maze[row * 37 + (column + 1)] = 2;
+            break;
+        case 'a':
+            maze[row * 37 + (column - 1)] = 2;
+            break;
+        default:
+            maze[row * 37 + column] = 2;
+            std::cout << "Invalid Input\n";
     }
 };
 
