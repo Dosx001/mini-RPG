@@ -23,7 +23,7 @@ short maze[851] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
                    1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,0,1,
                    1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
 
-void move() {
+bool move() {
     short row;
     short column;
     for (int i = 0; i < 851; i++) {
@@ -45,24 +45,40 @@ void move() {
     }
     char move;
     std::cin >> move;
-    maze[row * 37 + column] = 0;
     switch(move) {
         case 'w':
+            if (maze[(row - 1) * 37 + column] == 1) {
+                std::cout << "Invalid Move\n";
+                return false;
+            }
             maze[(row - 1) * 37 + column] = 2;
             break;
         case 's':
+            if (maze[(row + 1) * 37 + column] == 1) {
+                std::cout << "Invalid Move\n";
+                return false;
+            }
             maze[(row + 1) * 37 + column] = 2;
             break;
         case 'd':
+            if (maze[row * 37 + (column + 1)] == 1) {
+                std::cout << "Invalid Move\n";
+                return false;
+            }
             maze[row * 37 + (column + 1)] = 2;
             break;
         case 'a':
+            if (maze[row * 37 + (column - 1)] == 1) {
+                std::cout << "Invalid Move\n";
+                return false;
+            }
             maze[row * 37 + (column - 1)] = 2;
             break;
         default:
-            maze[row * 37 + column] = 2;
             std::cout << "Invalid Input\n";
     }
+    maze[row * 37 + column] = 0;
+    return true;
 };
 
 int main() {
