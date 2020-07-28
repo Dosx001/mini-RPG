@@ -17,6 +17,7 @@ add_library(
     src/Classes.cpp
     src/Enemy.cpp
     src/Battle.cpp
+    src/Maze.cpp
     include/Player.hpp
     include/Inventory.hpp
     include/Trials.hpp
@@ -24,6 +25,7 @@ add_library(
     include/Classes.hpp
     include/Enemy.hpp
     include/Battle.hpp
+    include/Maze.hpp
     )
 target_include_directories(lib PUBLIC include)
 
