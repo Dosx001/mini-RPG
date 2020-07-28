@@ -7,7 +7,7 @@
 class Battle {
     private:
         Player& Py;
-        Enemy& Ey;
+        Enemy Ey;
         Menu& Mu;
         std::string input;
         int moves = 2;
@@ -16,7 +16,7 @@ class Battle {
         int EyDamage[2] = {0, 0};
         int EyBlocks = 0;
     public:
-        Battle(Player& player, Enemy& enemy, Menu& menu);
+        Battle(Player& player, Menu& menu);
         void EnemyStatus();
         void PlayerStatus();
         void PlayerTurn();

@@ -1,8 +1,9 @@
 #include "Battle.hpp"
 
-Battle::Battle(Player& player, Enemy& enemy, Menu& menu)
-    :Py(player), Ey(enemy), Mu(menu) {
+Battle::Battle(Player& player, Menu& menu)
+    :Py(player), Mu(menu) {
     while (0 < Py.getHealth() and 0 < Ey.getHealth()) {
+        system("clear");
         EnemyStatus();
         PlayerStatus();
         PlayerTurn();

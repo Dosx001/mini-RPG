@@ -1,7 +1,6 @@
 #include "Player.hpp"
 #include "Inventory.hpp"
 #include "Menu.hpp"
-#include "Enemy.hpp"
 #include "Battle.hpp"
 #include "Maze.hpp"
 
@@ -27,8 +26,7 @@ int main() {
         }
         std::cout << '\n';
         Ma.move();
-        Enemy Ey;
-        Battle Ba(Py, Ey, Mu);
+        Battle Ba(Py, Mu);
     }
     return 0;
 }
