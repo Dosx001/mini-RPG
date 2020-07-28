@@ -1,12 +1,12 @@
 #!/bin/bash
-make mini_RPG.exe
+exe=mini_RPG.exe
 if [ $# == 0 ]
 then
-    expect scripts/run.exp
-elif [ $1 == 'W' ]
+    make ${exe} && expect scripts/run.exp
+elif [ $1 == 'w' ]
 then
-    expect scripts/run.exp W
-elif [ $1 == 'S' ]
+    make ${exe} && expect scripts/run.exp w
+elif [ $1 == 's' ]
 then
-    expect scripts/run.exp S
+    make ${exe} && expect scripts/run.exp s
 fi

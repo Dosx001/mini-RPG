@@ -5,9 +5,9 @@ send "Andres Rodriguez\r"
 expect "Is your name Andres Rodriguez? (yes/no) "
 send "yes\r"
 sleep .1
-if { [lindex $argv 0] == "W" } {
+if { [lindex $argv 0] == "w" } {
     send "Warrior\r"
-} elseif { [lindex $argv 0] == "S" } {
+} elseif { [lindex $argv 0] == "s" } {
     send "Sorcerer\r"
 } else {
     send "Hunter\r"
