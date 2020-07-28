@@ -15,7 +15,9 @@ int main() {
     std::string input = "Start";
     while (input != "Quit" and Py.getHealth() != 0) {
         system("clear");
+        Ma.display();
         Mu.quickMenu();
+        Ma.move();
         getline(std::cin, input);
         std::cout << line << '\n';
         if (input == "Full Menu" || input == "Full") {
@@ -25,7 +27,6 @@ int main() {
             Invy.displayItems();
         }
         std::cout << '\n';
-        Ma.move();
         srand(time(0));
         if (rand() % 99 + 1 <= 51) {
             Battle Ba(Py, Mu);
