@@ -16,18 +16,20 @@ int main() {
         system("clear");
         Ma.display();
         Mu.quickMenu();
-        Ma.move();
-        getline(std::cin, input);
         if (input == "Full Menu" || input == "Full") {
             Mu.fullMenu();
         }
         if (input == "Inventory" || input == "Inve") {
             Invy.displayItems();
         }
-        srand(time(0));
-        if (rand() % 99 + 1 <= 30) {
-            Battle Ba(Py, Mu);
+        if (Ma.check(input)) {
+            Ma.move();
+            srand(time(0));
+            if (rand() % 99 + 1 <= 30) {
+                Battle Ba(Py, Mu);
+            }
         }
+        getline(std::cin, input);
     }
     return 0;
 }

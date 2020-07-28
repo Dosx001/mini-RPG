@@ -73,3 +73,13 @@ bool Maze::move() {
     maze[row * 37 + column] = '0';
     return true;
 }
+
+bool Maze::check(std::string& input) {
+    std::string moves[4] = {"a", "w", "s", "d"};
+    for (int i = 0; i < 4; i++) {
+        if (moves[i] == input) {
+            return true;
+        }
+    }
+    return false;
+}

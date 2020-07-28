@@ -57,4 +57,5 @@ class Maze {
     public:
         void display();
         bool move();
+        bool check(std::string& input);
 };
