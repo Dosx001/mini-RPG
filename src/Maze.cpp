@@ -9,9 +9,7 @@ void Maze::show(int& next) {
     open[row * 37 + (column + 1)] = false;
 }
 
-bool Maze::move() {
-    short row;
-    short column;
+void Maze::display() {
     for (int i = 0; i < 851; i++) {
         if (open[i]) {
             std::cout << ' '; }
@@ -33,6 +31,9 @@ bool Maze::move() {
             std::cout << '\n';
         }
     }
+}
+
+bool Maze::move() {
     char input;
     std::cin >> input;
     int next;
