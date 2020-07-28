@@ -26,7 +26,10 @@ int main() {
         }
         std::cout << '\n';
         Ma.move();
-        Battle Ba(Py, Mu);
+        srand(time(0));
+        if (rand() % 99 + 1 <= 51) {
+            Battle Ba(Py, Mu);
+        }
     }
     return 0;
 }
