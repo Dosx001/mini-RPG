@@ -41,33 +41,27 @@ bool Maze::move(std::string& input) {
             if (maze[next] == '1') {
                 return false;
             }
-            maze[next] = '2';
             break;
         case 's':
             next = (row + 1) * 37 + column;
             if (maze[next] == '1') {
                 return false;
             }
-            maze[next] = '2';
             break;
         case 'd':
             next = row * 37 + (column + 1);
             if (maze[next] == '1') {
                 return false;
             }
-            maze[next] = '2';
             break;
         case 'a':
             next = row * 37 + (column - 1);
             if (maze[next] == '1') {
                 return false;
             }
-            maze[next] = '2';
-            break;
-        default:
-            return false;
     }
     show(next);
+    maze[next] = '2';
     maze[row * 37 + column] = '0';
     return true;
 }
