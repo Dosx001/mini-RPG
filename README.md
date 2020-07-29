@@ -58,8 +58,8 @@ Initializer List | | Sorting
 * :white_check_mark: Full menu to display all information
     * :white_check_mark: Use Player and Inventory pointers to update Full Menu
 * :black_square_button: ~~Actions class? e.g. attack, heal, move~~
-* :black_square_button: Map
-* :black_square_button: Levels
+* :white_check_mark: Map
+* :white_check_mark: Levels
 * :white_check_mark: Enemies
 * :white_check_mark: Leveling system
 * :white_check_mark: Classes e.g. Warrior, Sorcerer, Hunter
