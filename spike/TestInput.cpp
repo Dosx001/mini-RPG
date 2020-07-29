@@ -4,10 +4,11 @@
 
 int readUserInput(std::istream& input)
 {
-    int value;
+    std::string value;
     std::cout << "Enter a number: ";
-    input >> value;
-    return value;
+    getline(input, value);
+    //input >> value;
+    return std::stoi(value);
 }
 
 TEST(Some, Test) {
