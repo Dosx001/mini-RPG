@@ -22,14 +22,14 @@ int main() {
         if (input == "Inventory" || input == "Inve") {
             Invy.displayItems();
         }
+        getline(std::cin, input);
         if (Ma.check(input)) {
-            Ma.move();
+            Ma.move(input);
             srand(time(0));
             if (rand() % 99 + 1 <= 30) {
                 Battle Ba(Py, Mu);
             }
         }
-        getline(std::cin, input);
     }
     return 0;
 }

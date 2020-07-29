@@ -33,11 +33,9 @@ void Maze::display() {
     }
 }
 
-bool Maze::move() {
-    char input;
-    std::cin >> input;
+bool Maze::move(std::string& input) {
     int next;
-    switch(input) {
+    switch(input[0]) {
         case 'w':
             next = (row - 1) * 37 + column;
             if (maze[next] == '1') {
@@ -75,9 +73,9 @@ bool Maze::move() {
 }
 
 bool Maze::check(std::string& input) {
-    std::string moves[4] = {"a", "w", "s", "d"};
+    char moves[4] = {'a', 'w', 's', 'd'};
     for (int i = 0; i < 4; i++) {
-        if (moves[i] == input) {
+        if (moves[i] == input[0]) {
             return true;
         }
     }
