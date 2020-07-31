@@ -3,10 +3,10 @@
 Menu::Menu(Player& Py, Inventory& Invy) :Py(Py), Invy(Invy) {}
 
 void Menu::quickMenu() {
-    std::cout << Py.getName() << " | Lvl: " << Py.getLevel() << " | HP: " << Py.getHealth()
+    std::cout << '\n' << Py.getName() << " | Lvl: " << Py.getLevel() << " | HP: " << Py.getHealth()
         << '/' << Py.getMaxHealth() << " | MP: " << Py.getMana() << '/'
         << Py.getMaxMana() << '\n';
-    std::cout << "Full Menu | Inventory | Quit\n";
+    std::cout << "Full Menu | Inventory | Quit\n\n";
 }
 
 void Menu::fullMenu() {
